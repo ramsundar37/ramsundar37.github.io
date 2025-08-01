@@ -6,6 +6,7 @@
         --text-secondary: #8892b0;
         scroll-behavior: smooth;
       }
+
       /* Certifications Background */
     #certifications {
       background: 
@@ -384,3 +385,12 @@
           transform: none;
         }
       }
+
+/* Make navbar toggler icon and border white */
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1); /* turns black icon to white */
+}
+
+.navbar-toggler {
+  border-color: white; /* optional: makes border white */
+}
