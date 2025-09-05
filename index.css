@@ -7,6 +7,18 @@
         scroll-behavior: smooth;
       }
 
+    /* About Background */
+   #about {
+    background: 
+     linear-gradient(rgba(17, 34, 64, 0.9), rgba(10, 25, 47, 0.9)),
+     url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   padding: 100px 0;
+  }
+
+
       /* Certifications Background */
     #certifications {
       background: 
@@ -243,7 +255,19 @@
         left: -10px;
       }
 
-      
+    /* Connect Background */
+#connect {
+  background: 
+    linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 100px 0;
+}
+
+
+
 
 
       /* Contact Form */
