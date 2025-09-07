@@ -66,34 +66,53 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <h1 class="mb-4">Ramsundar B</h1>
-        <p class="h4 mb-4" style="color: var(--text-secondary)">
-          Data Analyst | Data Scientist and  AI | python and SQL| UI/UX 
-        </p>
-        <p class="h5 mb-4" style="color: var(--text-secondary)">"Transforming Ideas into Insightful Analytics, Visualization"</p>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1 class="mb-4">Ramsundar B</h1>
+    <p class="h4 mb-4" style="color: var(--text-secondary)">
+      Data Analyst | Data Scientist and AI | Python & SQL | UI/UX
+    </p>
+    <p class="h5 mb-4" style="color: var(--text-secondary)">
+      "Transforming Ideas into Insightful Analytics & Visualization"
+    </p>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-custom me-3">Explore My Work</a>
-          <a href="doc/Ramsundar_resume.pdf" class="btn btn-custom-secondary" download>Download Resume</a>
-        </div>
-        
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/ramsundar-b-b7b324246" target="_blank" class="social-link" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          
-          <a href="mailto:ramsundar3773@gmail.com" class="social-link" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="https://github.com/ramsundar37" target="_blank" class="social-link" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
+    <!-- Action Buttons -->
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-custom me-3">Explore My Work</a>
+      <a href="doc/Ramsundar_resume.pdf" class="btn btn-custom-secondary me-3" download>
+        Download Resume
+      </a>
+      <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#resumeModal">
+        Show Resume
+      </button>
+    </div>
+    
+    <!-- Social Links -->
+    <div class="social-links mt-4">
+      <a href="https://www.linkedin.com/in/ramsundar-b-b7b324246" target="_blank" class="social-link" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:ramsundar3773@gmail.com" class="social-link" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/ramsundar37" target="_blank" class="social-link" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Resume Modal of hero section -->
+<div class="modal fade" id="resumeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background-color: var(--secondary-blue); height: 90vh;">
+      <div class="modal-body p-0">
+        <embed src="doc/Ramsundar_resume.pdf" type="application/pdf" width="100%" height="100%">
       </div>
-    </section>
+    </div>
+  </div>
+</div>
+
 
     <!-- About Section -->
     <section id="about" class="section">
