@@ -19,6 +19,132 @@
   }
 
 
+#about h2.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: var(--accent-blue);
+}
+
+.emojiStory {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.infographicCards .card {
+  background: var(--secondary-blue);
+  color: var(--text-primary);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.infographicCards .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.infographicCards .card h3 {
+  color: var(--accent-blue);
+  margin-bottom: 15px;
+}
+
+/* Chatbot */
+#chatbot {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+}
+
+#chatbotBtn {
+  background: var(--accent-blue);
+  color: var(--primary-blue);
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#chatbotBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+#chatWindow {
+  display: none;
+  position: fixed;
+  bottom: 110px;
+  right: 25px;
+  width: 320px;
+  max-height: 450px;
+  background: var(--secondary-blue);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#chatHeader {
+  background: var(--primary-blue);
+  color: var(--accent-blue);
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#chatContent {
+  padding: 12px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+#chatInput {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid var(--accent-blue);
+  outline: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 16px;
+  background: var(--primary-blue);
+  color: var(--text-primary);
+}
+
+.botMsg, .userMsg {
+  margin: 6px 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.botMsg {
+  background: rgba(100,255,218,0.15);
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.userMsg {
+  background: var(--accent-blue);
+  color: var(--primary-blue);
+  text-align: right;
+}
+
+
+
+
       /* Certifications Background */
     #certifications {
       background: 
@@ -421,3 +547,25 @@
 .navbar-toggler {
   border-color: white; /* optional: makes border white */
 }
+
+/* Skills Section */
+#skills1 {
+  background: var(--secondary-blue);
+  padding: 80px 0;
+}
+
+.skill-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.skill-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+

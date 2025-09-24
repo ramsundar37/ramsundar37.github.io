@@ -6,6 +6,47 @@
       });
 
 
+const chatbotBtn = document.getElementById('chatbotBtn');
+const chatWindow = document.getElementById('chatWindow');
+const closeChat = document.getElementById('closeChat');
+const chatContent = document.getElementById('chatContent');
+const chatInput = document.getElementById('chatInput');
+
+const resumeInfo = {
+  name: "Ramsundar B",
+  skills: "Python, SQL, Power BI, Data Analysis, ML, DL, NLP, CV",
+  education: "M.Sc. AI, B.Sc. Computer Science",
+  experience: "Internships, Data Analyst projects, Portfolio development",
+  about: "Hi! I'm Ramsundar, passionate about Data Analysis and AI. I enjoy building projects that turn data into insights."
+};
+
+chatbotBtn.onclick = () => chatWindow.style.display = 'flex';
+closeChat.onclick = () => chatWindow.style.display = 'none';
+
+chatInput.addEventListener('keypress', function(e) {
+  if(e.key === 'Enter' && chatInput.value.trim() !== "") {
+    const query = chatInput.value.toLowerCase();
+    const userMsg = document.createElement('div');
+    userMsg.className = 'userMsg';
+    userMsg.textContent = chatInput.value;
+    chatContent.appendChild(userMsg);
+
+    let botReply = "Try keywords: name, skills, education, experience, about.";
+    if(query.includes("name")) botReply = "Name: " + resumeInfo.name;
+    else if(query.includes("skill")) botReply = "Skills: " + resumeInfo.skills;
+    else if(query.includes("education")) botReply = "Education: " + resumeInfo.education;
+    else if(query.includes("experience")) botReply = "Experience: " + resumeInfo.experience;
+    else if(query.includes("about")) botReply = resumeInfo.about;
+
+    const botMsg = document.createElement('div');
+    botMsg.className = 'botMsg';
+    botMsg.textContent = botReply;
+    chatContent.appendChild(botMsg);
+
+    chatInput.value = '';
+    chatContent.scrollTop = chatContent.scrollHeight;
+  }
+});
 
      
 
