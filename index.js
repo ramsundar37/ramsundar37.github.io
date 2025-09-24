@@ -20,17 +20,40 @@ const resumeInfo = {
   about: "Hi! I'm Ramsundar, passionate about Data Analysis and AI. I enjoy building projects that turn data into insights."
 };
 
+// Open / close chatbot
 chatbotBtn.onclick = () => chatWindow.style.display = 'flex';
 closeChat.onclick = () => chatWindow.style.display = 'none';
 
+// Typing effect
+function botType(message) {
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'botMsg';
+  typingDiv.innerHTML = `<span class="typing">⌛...</span>`;
+  chatContent.appendChild(typingDiv);
+  chatContent.scrollTop = chatContent.scrollHeight;
+
+  setTimeout(() => {
+    typingDiv.remove();
+    const botMsg = document.createElement('div');
+    botMsg.className = 'botMsg';
+    botMsg.textContent = message;
+    chatContent.appendChild(botMsg);
+    chatContent.scrollTop = chatContent.scrollHeight;
+  }, 1200);
+}
+
+// Handle user input
 chatInput.addEventListener('keypress', function(e) {
   if(e.key === 'Enter' && chatInput.value.trim() !== "") {
     const query = chatInput.value.toLowerCase();
+
+    // Show user message
     const userMsg = document.createElement('div');
     userMsg.className = 'userMsg';
     userMsg.textContent = chatInput.value;
     chatContent.appendChild(userMsg);
 
+    // Determine bot reply
     let botReply = "Try keywords: name, skills, education, experience, about.";
     if(query.includes("name")) botReply = "Name: " + resumeInfo.name;
     else if(query.includes("skill")) botReply = "Skills: " + resumeInfo.skills;
@@ -38,17 +61,12 @@ chatInput.addEventListener('keypress', function(e) {
     else if(query.includes("experience")) botReply = "Experience: " + resumeInfo.experience;
     else if(query.includes("about")) botReply = resumeInfo.about;
 
-    const botMsg = document.createElement('div');
-    botMsg.className = 'botMsg';
-    botMsg.textContent = botReply;
-    chatContent.appendChild(botMsg);
+    // Show typing effect then reply
+    botType(botReply);
 
     chatInput.value = '';
-    chatContent.scrollTop = chatContent.scrollHeight;
   }
 });
-
-     
 
       // Project Filter
       const filterButtons = document.querySelectorAll('.project-filters button');
