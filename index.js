@@ -17,7 +17,9 @@ const resumeInfo = {
   skills: "Python, SQL, Power BI, Data Analysis, ML, DL, NLP, CV",
   education: "M.Sc. AI, B.Sc. Computer Science",
   experience: "Internships, Data Analyst projects, Portfolio development",
-  about: "Hi! I'm Ramsundar, passionate about Data Analysis and AI. I enjoy building projects that turn data into insights."
+  phoneno:"9944612509",
+  mail_id:"ramsundar3773@gmail.com",
+  about : "Hi! I'm Ramsundar, passionate about Data Analysis and AI. I enjoy building projects that turn data into insights."
 };
 
 // Open / close chatbot
