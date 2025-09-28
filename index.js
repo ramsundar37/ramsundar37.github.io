@@ -280,18 +280,18 @@ function playpowerbi(button) {
 
 
 
-// =====================
+
 // Light/Dark Theme Toggle Switch
-const themeCheckbox = document.getElementById("themeToggle");
+const themeCheckbox = document.getElementById("themeToggleInput");
 const body = document.body;
 
-// Load saved theme
+// Load saved theme from localStorage
 if (localStorage.getItem("theme") === "light") {
   body.classList.add("light-theme");
   themeCheckbox.checked = true;
 }
 
-// Toggle theme
+// Toggle theme on change
 themeCheckbox.addEventListener("change", () => {
   if (themeCheckbox.checked) {
     body.classList.add("light-theme");
