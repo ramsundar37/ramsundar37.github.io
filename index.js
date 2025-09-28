@@ -70,6 +70,10 @@ chatInput.addEventListener('keypress', function(e) {
   }
 });
 
+
+
+
+
       // Project Filter
       const filterButtons = document.querySelectorAll('.project-filters button');
       const projectItems = document.querySelectorAll('[data-category]');
@@ -271,4 +275,29 @@ function playpowerbi(button) {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'GA_MEASUREMENT_ID');
-    
+
+
+
+
+
+// =====================
+// Light/Dark Theme Toggle Switch
+const themeCheckbox = document.getElementById("themeToggle");
+const body = document.body;
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-theme");
+  themeCheckbox.checked = true;
+}
+
+// Toggle theme
+themeCheckbox.addEventListener("change", () => {
+  if (themeCheckbox.checked) {
+    body.classList.add("light-theme");
+    localStorage.setItem("theme", "light");
+  } else {
+    body.classList.remove("light-theme");
+    localStorage.setItem("theme", "dark");
+  }
+});
