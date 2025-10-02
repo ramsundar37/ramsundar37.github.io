@@ -96,7 +96,7 @@ chatInput.addEventListener('keypress', function(e) {
         });
       });
 
-      // Particles.js Configuration
+      // Particles.js Configuration  animation in 1st page
       particlesJS("particles-js", {
         particles: {
           number: { value: 50 },
@@ -270,11 +270,13 @@ function playpowerbi(button) {
         });
       });
 
+      
       // Google Analytics
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
+      gtag('config', 'G-RTZGXLZH53'); // Your GA4 Measurement ID
+
 
 
 
