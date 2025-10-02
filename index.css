@@ -10,6 +10,8 @@
         --text-secondary: #8892b0;
         --text-grey:#8892b0;
         --text-third:white;
+
+         --dotanimation-color: #64ffda;
         scroll-behavior: smooth;
       }
 
@@ -28,6 +30,8 @@ body.light-theme {
   --text-secondary: #333333;
   --text-third:black;
   --text-grey:#8892b0;
+
+  --dotanimationc-color: #0077ff;
   scroll-behavior: smooth;
 
   background-color: #f9f8f8 !important; /* ensures body background changes */

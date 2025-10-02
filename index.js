@@ -100,48 +100,54 @@ chatInput.addEventListener('keypress', function(e) {
       particlesJS("particles-js", {
         particles: {
           number: { value: 50 },
-          color: { value: "#64ffda" },
+          color: { value: "#64ffda" },         // ← THIS CONTROLS DOT COLOR
           shape: { type: "circle" },
           opacity: { value: 0.5 },
           size: { value: 3 },
-          move: {
+          move: {                               // ← THIS BLOCK CONTROLS THE LINES BETWEEN DOTS
             enable: true,
             speed: 2,
-            direction: "none",
+            direction: "none",                  // ← Direction of movement
             random: false,
             straight: false,
-            out_mode: "out",
+            out_mode: "out",                   // ← What happens when dot reaches canvas edge
             bounce: false,
           },
         },
         interactivity: {
           detect_on: "canvas",
           events: {
-            onhover: { enable: true, mode: "repulse" },
+            onhover: { enable: true, mode: "repulse" },     // ← Mouse hover effect
             resize: true,
           },
         },
         retina_detect: true,
       });
 
-      // GSAP Animations
-      gsap.registerPlugin(ScrollTrigger);
 
-      // Hero Animation
-      gsap.from(".hero h1", {
-        duration: 1.5,
-        y: 100,
-        opacity: 0,
-        ease: "power4.out",
-      });
+  
 
-      gsap.from(".hero p", {
-        duration: 1.5,
-        y: 50,
-        opacity: 0,
-        delay: 0.3,
-        ease: "power4.out",
-      });
+
+// Register the ScrollTrigger plugin (needed for scroll-based animations)
+gsap.registerPlugin(ScrollTrigger);
+
+// Animate the Hero Heading (h1)
+gsap.from(".hero h1", {
+  duration: 1.5,       // Animation lasts 1.5 seconds
+  y: 100,              // Start 100px below its final position
+  opacity: 0,          // Start invisible (fade in)
+  ease: "power4.out",  // Smooth easing (fast start, slow end)
+});
+
+// Animate the Hero Paragraph (p) below the heading
+gsap.from(".hero p", {
+  duration: 1.5,       // Animation lasts 1.5 seconds
+  y: 50,               // Start 50px below its final position
+  opacity: 0,          // Start invisible (fade in)
+  delay: 0.3,          // Delay 0.3s after heading animation starts
+  ease: "power4.out",  // Same easing for smooth effect
+});
+
 
       // Section Animations
       gsap.utils.toArray(".section-title").forEach((title) => {
