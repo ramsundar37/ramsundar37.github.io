@@ -338,6 +338,29 @@ body.light-theme {
         box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
       }
 
+    /* Radar Chart Styles */
+.radar-chart-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.chart-title {
+  color: var(--accent-blue);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+#skillRadarChart {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--secondary-blue);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 255, 218, 0.15);
+}
+
+
       /* Projects */
 
        

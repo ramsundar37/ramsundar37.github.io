@@ -283,8 +283,46 @@ function playpowerbi(button) {
       gtag('js', new Date());
       gtag('config', 'G-RTZGXLZH53'); // Your GA4 Measurement ID
 
+// Radar Chart (Skill Overview)
+const ctxRadar = document.getElementById('skillRadarChart');
 
-
+if (ctxRadar) {
+  new Chart(ctxRadar, {
+    type: 'radar',
+    data: {
+      labels: ['Programming and database', 'Data Analysis', 'Visualization', 'ML/DL', 'Data Science', 'AI'],
+      datasets: [{
+        label: 'Proficiency (%)',
+        data: [90, 85, 80, 70, 75, 90],
+        fill: true,
+        backgroundColor: 'rgba(100, 255, 218, 0.2)',
+        borderColor: '#64ffda',
+        pointBackgroundColor: '#64ffda',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: '#64ffda'
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        r: {
+          angleLines: { color: 'rgba(100,255,218,0.2)' },
+          grid: { color: 'rgba(100,255,218,0.2)' },
+          suggestedMin: 0,
+          suggestedMax: 100,
+          pointLabels: { color: getComputedStyle(document.body).getPropertyValue('--text-primary'), font: { size: 13 } },
+          ticks: { display: false }
+        }
+      },
+      plugins: {
+        legend: {
+          labels: { color: getComputedStyle(document.body).getPropertyValue('--text-primary') }
+        }
+      }
+    }
+  });
+}
 
 
 
