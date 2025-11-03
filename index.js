@@ -62,7 +62,7 @@ chatInput.addEventListener('keypress', function(e) {
     else if(query.includes("education")) botReply = "Education: " + resumeInfo.education;
     else if(query.includes("experience")) botReply = "Experience: " + resumeInfo.experience;
     else if(query.includes("about")) botReply = resumeInfo.about;
-    else if(query.includes("mailid")) botReply = resumeInfo.mail_id;
+    else if(query.includes("mail_id")) botReply = resumeInfo.mail_id;
     else if(query.includes("phoneno")) botReply = resumeInfo.phoneno;
 
     // Show typing effect then reply
@@ -279,11 +279,7 @@ function playpowerbi(button) {
       });
 
       
-      // Google Analytics
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RTZGXLZH53'); // Your GA4 Measurement ID
+     
 
 // Radar Chart (Skill Overview)
 const ctxRadar = document.getElementById('skillRadarChart');
