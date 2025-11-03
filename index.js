@@ -14,12 +14,12 @@ const chatInput = document.getElementById('chatInput');
 
 const resumeInfo = {
   name: "Ramsundar B",
-  skills: "Python, SQL, Power BI, Data Analysis, ML, DL, NLP, CV",
-  education: "M.Sc. AI, B.Sc. Computer Science",
-  experience: "Internships, Data Analyst projects, Portfolio development",
+  skills: "Python, SQL, Power BI, Data Analysis",
+  education: "BE-CSE (Sathayabama)",
+  experience: "Hand on projects",
   phoneno:"9944612509",
   mail_id:"ramsundar3773@gmail.com",
-  about : "Hi! I'm Ramsundar, passionate about Data Analysis and AI. I enjoy building projects that turn data into insights."
+  about : "Hi! I'm Ramsundar, passionate about Data Analysis ,DS ,and AI. I enjoy building projects that turn data into insights."
 };
 
 // Open / close chatbot
@@ -62,6 +62,8 @@ chatInput.addEventListener('keypress', function(e) {
     else if(query.includes("education")) botReply = "Education: " + resumeInfo.education;
     else if(query.includes("experience")) botReply = "Experience: " + resumeInfo.experience;
     else if(query.includes("about")) botReply = resumeInfo.about;
+    else if(query.includes("mailid")) botReply = resumeInfo.mail_id;
+    else if(query.includes("phoneno")) botReply = resumeInfo.phoneno;
 
     // Show typing effect then reply
     botType(botReply);
