@@ -16,8 +16,6 @@
       }
 
 
-
-/* Light theme override */
 /* Light theme override */
 body.light-theme {
   --primary-blue: #ffffff;
@@ -83,6 +81,8 @@ body.light-theme {
   color: var(--accent-blue);
   margin-bottom: 15px;
 }
+
+
 
 /* Chatbot */
 #chatbot {
@@ -291,6 +291,21 @@ body.light-theme {
         margin-bottom: 1.5rem;
       }
 
+      .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;      /* allows auto-wrap */
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-buttons .btn {
+    flex: 1 1 auto;       /* automatically grows & shrinks */
+    max-width: 280px;     /* keeps your button shape normal */
+    text-align: center;
+}
+
+
+
       /* Sections */
       .section {
         padding: 100px 0;
@@ -352,7 +367,7 @@ body.light-theme {
 }
 
 #skillRadarChart {
-  max-width: 500px;
+  max-width: 450px;
   margin: 0 auto;
   background: var(--secondary-blue);
   border-radius: 12px;
@@ -363,8 +378,6 @@ body.light-theme {
 
       /* Projects */
 
-       
-      
       .project-filters {
         margin-bottom: 30px;
         display: flex;
