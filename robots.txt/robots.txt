@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ramsundar37.github.io/sitemap.xml
