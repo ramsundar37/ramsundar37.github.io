@@ -334,6 +334,7 @@ body.light-theme {
         background: var(--accent-blue);
       }
 
+
       /* Skills */
       .skill-box {
         background: var(--secondary-blue);
@@ -352,6 +353,7 @@ body.light-theme {
         transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
       }
+
 
     /* Radar Chart Styles */
 .radar-chart-container {
@@ -416,6 +418,7 @@ body.light-theme {
         box-shadow: 0 15px 30px rgba(100, 255, 218, 0.3);
       }
 
+
       /* Timeline */
       .timeline {
         position: relative;
@@ -475,6 +478,7 @@ body.light-theme {
         left: -10px;
       }
 
+
     /* Connect Background */
 #connect {
   background: 
@@ -485,8 +489,6 @@ body.light-theme {
   background-attachment: fixed;
   padding: 100px 0;
 }
-
-
 
 
 
@@ -572,7 +574,10 @@ body.light-theme {
         gap: 5px;
       }
 
+
+
       /* Progress Bars */
+
       .progress-container {
         margin-bottom: 20px;
       }
@@ -597,7 +602,9 @@ body.light-theme {
   color: white; /* White text inside */
 }
 
-      /* Responsive */
+
+      /* Responsive tab screen size */
+
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 3rem;
@@ -632,6 +639,9 @@ body.light-theme {
           transform: none;
         }
       }
+
+        
+
 
 /* Make navbar toggler icon and border white */
 .navbar-toggler-icon {
