@@ -1,49 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-     <!-- Google verification -->
-<meta name="google-site-verification" content="puvoNFYIYfchrudp1NZi643BtvzfsesLYwGRITwXCzI" />
+<head>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google verification -->
+  <meta name="google-site-verification" content="puvoNFYIYfchrudp1NZi643BtvzfsesLYwGRITwXCzI" />
 
-<title>Ramsundar B | AI & ML | Data Science Student Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ramsundar B | AI & ML | Data Science Student Portfolio</title>
 
 
-<meta name="description"
-content="Ramsundar B (ramsundar37) — Artificial Intelligence focused Data Science student with strong interest in Machine Learning and Data Analytics." />
+  <meta name="description"
+    content="Ramsundar B (ramsundar37) — Artificial Intelligence focused Data Science student with strong interest in Machine Learning and Data Analytics." />
 
-<meta name="keywords"
-content="Ramsundar B, ramsundar37, Artificial Intelligence, Data Science, Machine Learning, Data Analytics, Python, SQL, Power BI, Portfolio">
+  <meta name="keywords"
+    content="Ramsundar B, ramsundar37, Artificial Intelligence, Data Science, Machine Learning, Data Analytics, Python, SQL, Power BI, Portfolio">
 
-<meta name="author" content="Ramsundar B">
-<meta name="robots" content="index, follow">
+  <meta name="author" content="Ramsundar B">
+  <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Ramsundar B | Artificial Intelligence • Data Science • Machine Learning Portfolio">
-<meta property="og:description"
-content="Artificial Intelligence focused Data Science student with projects in Machine Learning and Data Analytics.">
-<meta property="og:url" content="https://ramsundar37.github.io/" />
-<meta property="og:type" content="website" />
-                      <!-- Google verification/ -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ramsundar B | Artificial Intelligence • Data Science • Machine Learning Portfolio">
+  <meta property="og:description"
+    content="Artificial Intelligence focused Data Science student with projects in Machine Learning and Data Analytics.">
+  <meta property="og:url" content="https://ramsundar37.github.io/" />
+  <meta property="og:type" content="website" />
+  <!-- Google verification/ -->
 
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
-<!-- AOS Animation -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="index.css">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
+  <link rel="canonical" href="https://ramsundar37.github.io/">
 
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-<!-- JSON-LD Identity -->
-<script type="application/ld+json">
+  <!-- JSON-LD Identity -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -75,953 +68,1285 @@ content="Artificial Intelligence focused Data Science student with projects in M
 }
 </script>
 
+  <!-- Bootstrap (grid only) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/ico" href="images/favicon.ico">
 </head>
 
-  <body>
-    <!-- Particles Background -->
+<body>
+
+  <!-- Theme Toggle  -->
+  <label class="switch theme-switch">
+    <input type="checkbox" id="themeToggleInput">
+    <span class="slider"></span>
+  </label>
+
+
+  <!-- Chatbot (New Design) -->
+  <div id="chatbot">
+    <!-- Tooltip Bubble -->
+    <div id="chatTooltip" class="chat-tooltip">
+      <div class="tooltip-shell">
+        <div class="shimmer"></div>
+        <div class="tooltip-content">
+          <p>✨Discover why <span class="highlight">Ram</span> is<br>the perfect fit for your team!</p>
+        </div>
+      </div>
+      <div class="tooltip-arrow"></div>
+    </div>
+
+    <!-- Trigger Button -->
+    <button id="chatbotBtn" class="chat-trigger">
+      <div class="btn-ring"></div>
+      <div class="btn-ripple"></div>
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chatWindow" class="glass hidden">
+      <!-- Header -->
+      <div class="chat-header">
+        <div class="header-info">
+          <div class="avatar-circle">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div>
+            <h3>Chat with Ramsundar B 🤖</h3>
+          </div>
+        </div>
+        <button id="closeChat"><i class="fas fa-times"></i></button>
+      </div>
+
+      <!-- Messages -->
+      <div id="chatContent" class="chat-messages">
+        <!-- Bot Welcome Message -->
+        <div class="botMsg message bot-message glass">
+          Hi! Ask me about my Name, skills, education, experience, mail_id or about me 😊
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Ask me anything..." />
+        <button id="sendMessageBtn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar (old portfolio style) -->
+  <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand gradient-text1" href="#home"> Ramsundar B</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-label="Menu toggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <!-- Particles background -->
     <div id="particles-js"></div>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" id="themeToggle">
-    </div>
+    <!-- Hero content -->
+    <div class="container text-center hero-content" data-aos="fade-up">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
-      <div class="container">
-        <a class="navbar-brand" href="#" style="color: var(--text-primary)">Ramsundar B</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu toggle">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-           
-           <li class="nav-item">
-            <a class="nav-link" href="#publications">Publications</a>
-          </li>
+      <p class="hello">Hello!</p>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-
-<!-- Theme Toggle (fixed below navbar) -->
-<label class="switch theme-switch">
-  <input type="checkbox" id="themeToggleInput">
-  <span class="slider"></span>
-</label>
-
-    <!-- Hero Section -->
-<section class="hero" id="home">
-
-  <div class="hero-content">
-    <h1 class="mb-4">Ramsundar B</h1>
-
-   <p class="h3 mb-3" style="color: var(--text-secondary)">
-      Artificial Intelligence • Data Science • Machine Learning
-   </p>
-   <p class="h4 mb-4" style="color: var(--text-secondary)">
-      Data Analytics | Python | SQL | UI/UX
-   </p>
-   <p class="h5 mb-4" style="color: var(--text-secondary)">
-      Transforming ideas into intelligent analytics and visual insights
-   </p>
-
-
-    <!-- Action Buttons -->
-    <div class="hero-buttons">
-      <a href="#projects" class="btn btn-custom me-3">Explore My Work</a>
-      <a href="doc/Ramsundar_resume.pdf" class="btn btn-custom-secondary me-3" download> Download Resume</a>
-      <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#resumeModal">Show Resume</button>
-    </div>
-    
-    <!-- Social Links -->
-    <div class="social-links mt-4">
-      <a href="https://www.linkedin.com/in/ramsundar-b-b7b324246" target="_blank" class="social-link" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="mailto:ramsundar3773@gmail.com" class="social-link" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://github.com/ramsundar37" target="_blank" class="social-link" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Resume Modal of hero section -->
-<div class="modal fade" id="resumeModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content" style="background-color: var(--secondary-blue); height: 90vh;">
-      <div class="modal-body p-0">
-        <embed src="doc/Ramsundar_resume.pdf" type="application/pdf" width="100%" height="100%">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    <!-- About Section -->
-   
-<section id="about" class="section">
-  <div class="container">
-    <h2 class="section-title text-left mb-5" >About Me 😎🚀</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-
-        <div class="emojiStory" data-aos="fade-up" data-aos-delay="100" style="text-align: left; margin-bottom: 30px;color: white;">
-          👋 Hi! I'm Ram<br>
-          🔍 You can search me on Google as -- <strong> ramsundar37 </strong><br>
-          💻 Passionate about AI & Data Science<br>
-          📊 I love turning data into insights<br>
-          🤖 Building AI/ML projects is my interest<br>
-
-          
-        </div>
-
-        <div class="leadTextContainer" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
-          <p class="lead" style="color: var(--text-grey);">
-            I’m a BE-CSE student with a strong interdisciplinary foundation in data analytics, data visualization, Data Science, and UI/UX. I’ve built predictive models and interactive dashboards through hands-on projects using Python, SQL, PL/SQL, UI/UX (Figma), Power BI, and Tableau.
-          </p>
-          <p class="lead" style="color: var(--text-grey);  ">
-            My journey began with Python, SQL, and UI/UX during B.E-CSE and expanded into projects in data visualization and analytics. Currently, I’m learning AI, machine learning, and Data Science fundamentals while working on real-world mini-projects in regression, classification, and clustering.
-          </p>
-        </div>
-        <!-- Infographic Cards -->
-    <div class="infographicCards row justify-content-center mt-5" data-aos="fade-up" data-aos-delay="300">
-      <div class="card col-md-6 m-3">
-        <h5>Education 🎓</h5>
-        <p class="">B.E.  Computer Science - Sathyabama (2024)</p>
-        <p>M.Sc. Artificial intelligence - BTU Cottbus 2026*</p>
-      </div>
-      </div>
-
-      </div>
-    </div>
-  </div>
-</section>
+      <h1 class="hero-title">
+        I'm<span class="gradient-text1"> Ramsundar B</span>
+      </h1>
 
 
 
+      <h2 class="hero-skill">
+        Artificial Intelligence • Data Science • Machine Learning
+      </h2>
 
-<!-- Chatbot -->
-<div id="chatbot">
-  <!-- Floating button -->
-  <button id="chatbotBtn"><i class="fas fa-comment-alt"></i></button>
-
-  <!-- Chat window -->
-  <div id="chatWindow">
-    <div id="chatHeader">
-      <span>Chat with My Bot 🤖</span>
-      <button id="closeChat">✖</button>
-    </div>
-    <div id="chatContent">
-      <div class="botMsg">Hi! Ask me about my Name, skills, phoneno, mail_id or about me 😊</div>
-    </div>
-    <input type="text" id="chatInput" placeholder="Type your question..." />
-  </div>
-</div>
+      <h5 class="hero-desc">
+        Data Analytics | Python | SQL | Computer Vision | NLP
+      </h5>
 
 
-
-
-    <!-- Skills Section -->
-    <section id="skills" class="section bg-dark">
-      <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-        
-        <!-- Skill Progress Bars -->
-        
-<div class="row mb-5">
-  <!-- Left Column -->
-  <div class="col-md-6">
-    <div class="progress-container">
-      <div class="progress-label" style="color: white;">
-        <span>Python</span>
-        <span>80%</span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 80%; color: white;">80%</div>
-      </div>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-label" style="color: white;">
-        <span>SQL</span>
-        <span>85%</span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 85%; color: white;">85%</div>
-      </div>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-label" style="color: white;">
-        <span>Probability and Statistics</span>
-        <span>75%</span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 75%; color: white;">75%</div>
-      </div>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-label" style="color: white;">
-        <span>PL/SQL</span>
-        <span>70%</span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 70%; color: white;">70%</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Right Column -->
-  <div class="col-md-6">
-    <div class="progress-container">
-      <div class="progress-label" style="color: white;">
-        <span>UI/UX</span>
-        <span>90%</span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 90%; color: white;">90%</div>
-      </div>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-label" style="color: white;">
-        <span>Power BI</span>
-        <span>80%</span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 80%; color: white;">80%</div>
-      </div>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-label" style="color: white;">
-        <span>Tableau</span>
-        <span>80%</span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 80%; color: white;">80%</div>
-      </div>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-label" style="color: white;">
-        <span>HTML/CSS</span>
-        <span>70%</span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 70%; color: white;">70%</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-        <!-- Skill Tags -->
-        <div class="row justify-content-center">
-          <div class="col-auto skill-box" >Python(OOPS AND DSA) </div>
-          <div class="col-auto skill-box">SQL</div>
-          <div class="col-auto skill-box">PL/SQL</div>
-          <div class="col-auto skill-box">Matplotlib</div>
-          <div class="col-auto skill-box">Seaborn</div>
-          <div class="col-auto skill-box">Power BI</div>
-          <div class="col-auto skill-box">Tableau</div>
-          <div class="col-auto skill-box">HTML & CSS</div>
-          <div class="col-auto skill-box">UI/UX</div>
-          <div class="col-auto skill-box">Excel</div>
-          <div class="col-auto skill-box">Web Scraping (BeautifulSoup & API)</div>
-          <div class="col-auto skill-box">Photoshop</div>
-        </div>
-
-        <!-- Radar Chart (3rd part) -->
-       <div class="radar-chart-container mt-8" data-aos="fade-up" data-aos-delay="200">
-           <h3 class="chart-title">Skill Strength Overview 🕸️</h3>
-          <canvas id="skillRadarChart"></canvas>
-       </div>
-
-      </div>
-    </section>
-
-<!-- Skills & Tools Section -->
-<section id="skills1" class="section">
-  <div class="container">
-    <h2 class="mb-4" style="color: var(--accent-blue);">Skills and Tools</h2>
-    <hr class="mb-4" style="border-color: var(--accent-blue);">
-    
-    <div class="row justify-content-center">
-      <!-- Each skill -->
-      <div class="col-6 col-md-2 text-center m-3" data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/excel.png" alt="Excel" class="skill-img mb-2">
-        <h5 style="color: var(--accent-blue)">Excel</h5>
-      </div>
-      <div class="col-6 col-md-2 text-center m-3" data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/vscode1.png" alt="VS Code" class="skill-img mb-2">
-        <h5 style="color: var(--accent-blue)">VS code</h5>
-      </div>
-
-      <div class="col-6 col-md-2 text-center m-3" data-aos="zoom-in" data-aos-delay="300">
-        <img src="images/canva1.png" alt="Canva" class="skill-img mb-2">
-        <h5 style="color: var(--accent-blue)">Canva</h5>
-      </div>
-      
-      
-      <div class="col-6 col-md-2 text-center m-3" data-aos="zoom-in" data-aos-delay="400">
-        <img src="images/powerbi.png" alt="Power BI" class="skill-img mb-2">
-        <h5 style="color: var(--accent-blue)">Power BI</h5>
-      </div>
-      <div class="col-6 col-md-2 text-center m-3" data-aos="zoom-in" data-aos-delay="500">
-        <img src="images/Tableau.png" alt="Tableau" class="skill-img mb-2">
-        <h5 style="color: var(--accent-blue)">Tableau</h5>
-      </div>
-    </div>
-
-    <!-- Second Row (2 Skills) -->
-    <div class="row justify-content-center mt-3">
-      <div class="col-6 col-md-2 text-center m-3" data-aos="zoom-in" data-aos-delay="200">
-        <img src="images/python.gif" alt="Python" class="skill-img mb-2">
-        <h5 style="color: var(--accent-blue)">Python</h5>
-      </div>
-
-      <div class="col-6 col-md-2 text-center m-3" data-aos="zoom-in" data-aos-delay="300">
-        <img src="images/Sql.png" alt="SQL" class="skill-img mb-2">
-        <h5 style="color: var(--accent-blue)">SQL & PL/SQL</h5>
-      </div>
-      
-      <div class="col-6 col-md-2 text-center m-3" data-aos="zoom-in" data-aos-delay="200">
-        <img src="images/figma1.gif" alt="Figma" class="skill-img mb-2">
-        <h5 style="color: var(--accent-blue)">Figma (UI/UX)</h5>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- Publications -->
-    
-<section id="publications" class="py-5" style="background-color: var(--secondary-blue); color: var(--text-primary);">
-  <div class="container">
-    <h2 class="mb-4" style="color: var(--accent-blue);">Publications</h2>
-    <hr class="mb-4" style="border-color: var(--accent-blue);">
-
-    <div class="card mb-3" style="background-color: var(--primary-blue); border: none;">
-      <div class="card-body">
-        
-        <h5 class="card-title" style="color: var(--text-primary);">
-          Traffic Sign Recognition Using Shift Invariant 2-D ConvNet
-        </h5>
-        <p class="card-text" style="color: var(--text-secondary);">
-          Published in IEEE - 2024
-        </p>
-        
-        <a href="https://ieeexplore.ieee.org/document/10544943/keywords#keywords" target="_blank" 
-           class="btn btn-sm" 
-           style="background-color: var(--accent-blue); color: #0a192f; font-weight: bold;">
-          Read Paper
+      <!-- Action Buttons -->
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-hero">
+          Explore My Work
         </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- Projects Section -->
-<section id="projects" class="section">
-  <div class="container">
-    <h2 class="section-title">Featured Work</h2>
-    
-    <!-- Project Filters -->
-<div class="project-filters">
-  <button class="active" data-filter="all" style="color: white;">All</button>
-  <button data-filter="data" style="color: white;">Data Analytics and Data Visualization</button>
-  <button data-filter="web" style="color: white;">UI/UX</button>
-  <button data-filter="design" style="color: white;">Blender</button>
-  <button data-filter="ml and DL" style="color: white;">ML and DL Projects</button>
-  <button data-filter="Ai and Ds" style="color: white;">AI and Data Science</button>
-</div>
-
-
-
-    
-<div class="row g-4">
-      
-<!-- TravelMate App UI/UX Project -->
-<div class="col-md-6 col-lg-4" data-category="web">
-  <div class="card">
-    <div class="video-wrapper" style="position: relative;">
-      <!-- Image thumbnail shown by default -->
-      <img src="images/figma UI.png" alt="TravelMate UI Design" class="card-img-top" style="height: 200px; object-fit: cover;">
-      
-      <!-- Hidden video demo (revealed on button click) -->
-      <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
-        <source src="videos/figma UI.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--accent-blue)">TravelMate - UI/UX Case Study</h5>
-      <p class="card-text" style="color: var(--text-secondary)">
-        A responsive mobile travel booking app designed using Figma, featuring location search, itinerary planner, and calendar integration with intuitive user flows.
-      </p>
-      <div class="tech-tags">
-        <span class="badge bg-dark">Figma</span>
-        <span class="badge bg-dark">UI/UX</span>
-        <span class="badge bg-dark">Prototype</span>
-      </div>
-      <div class="mt-3 d-flex gap-2 flex-wrap">
-        <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
-        <a href="https://www.figma.com/proto/o1bcBh6bxMCwSdYDAydJDn/TravelMate?node-id=2-287&p=f&t=fIjKoG2gyBt54T7Z-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=80%3A1229" class="btn btn-sm btn-custom-secondary" target="_blank">View Design</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Traffic Sign Recognition Project -->
-<div class="col-md-6 col-lg-4" data-category="ml and DL">
-  <div class="card">
-    <div class="video-wrapper" style="position: relative;">
-     
-      <img src="images/traffic sign.png" alt="Traffic Sign Recognition" class="card-img-top" style="height: 200px; object-fit: cover;">
-      
-      
-      <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
-        <source src="videos/traffic sign reco.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--accent-blue)">Traffic Sign Recognition (IEEE 2024)</h5>
-      <p class="card-text" style="color: var(--text-secondary)">
-        Deep learning system for recognizing traffic signs using Shift Invariant 2D ConvNet. Streamlit-powered UI for testing in real time.
-      </p>
-      <div class="tech-tags">
-        <span class="badge bg-dark">Python</span>
-        <span class="badge bg-dark">PyTorch</span>
-        <span class="badge bg-dark">Streamlit</span>
-        <span class="badge bg-dark">OpenCV</span>
-      </div>
-      <div class="mt-3 d-flex gap-2">
-        <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
-        <a href="https://github.com/ramsundar37/Traffic-sign-recognition" class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
-      </div>
-    </div>
-  </div>
-</div>
-   
-
-
-<!-- powerbi -->
-<div class="col-md-6 col-lg-4" data-category="data">
-  <div class="card">
-    <div class="video-wrapper" style="position: relative;">
-      <img src="images/Blinkit.png" alt="power BI" class="card-img-top" style="height: 200px; object-fit: cover;">
-      <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
-        <source src="videos/blikitpowerbi.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--accent-blue)">Blinkit Dashboard - PowerBi</h5>
-      <p class="card-text" style="color: var(--text-secondary)">
-        Power BI dashboard visualizing order insights, categories, delivery trends and more for Blinkit.
-      </p>
-      <div class="tech-tags">
-        <span class="badge bg-dark">Power BI</span>
-        <span class="badge bg-dark">BI Visualization</span>
-      </div>
-      <div class="mt-3 d-flex gap-2">
-        <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
-        <a href="https://github.com/ramsundar37/Blinkit_powerBi" class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-6 col-lg-4" data-category="data">
-  <div class="card">
-    <div class="video-wrapper" style="position: relative;">
-      <img src="images/iplanalysis_powerbi.png" alt="power BI" class="card-img-top" style="height: 200px; object-fit: cover;">
-      <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
-        <source src="videos/iplanalysis_powerbi.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--accent-blue)">IPL Analysis - PowerBi Dashboard</h5>
-      <p class="card-text" style="color: var(--text-secondary)">
-        Power BI dashboard visualizing IPL analysis.
-      </p>
-      <div class="tech-tags">
-        <span class="badge bg-dark">Power BI</span>
-        <span class="badge bg-dark">BI Visualization</span>
-      </div>
-      <div class="mt-3 d-flex gap-2">
-        <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
-        <a href="https://github.com/ramsundar37/IPL_Analysis_PowerBi" class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Tableau -->
-<div class="col-md-6 col-lg-4" data-category="data">
-  <div class="card">
-    <div class="video-wrapper" style="position: relative;">
-      <img src="images/Blinkit-Tableau.png" alt="power BI" class="card-img-top" style="height: 200px; object-fit: cover;">
-      <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
-        <source src="videos/Tableau_Blinkit.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--accent-blue)">Blinkit Dashboard - Tableau</h5>
-      <p class="card-text" style="color: var(--text-secondary)">
-        Power BI dashboard visualizing order insights, categories, delivery trends and more for Blinkit.
-      </p>
-      <div class="tech-tags">
-        <span class="badge bg-dark">Tableau</span>
-        <span class="badge bg-dark"> Visualization</span>
-      </div>
-      <div class="mt-3 d-flex gap-2">
-        <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
-        <a href="https://github.com/ramsundar37/Tableau_Blinkit" class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- tableau -->
-<div class="col-md-6 col-lg-4" data-category="data">
-  <div class="card">
-    <div class="video-wrapper" style="position: relative;">
-      <img src="images/Tableau_Hranaly.png" alt="HR Analytics" class="card-img-top" style="height: 200px; object-fit: cover;">
-      <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
-        <source src="videos/Tableau Hranaly.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--accent-blue)">HR Analytics Dashboard(Tableau)</h5>
-      <p class="card-text" style="color: var(--text-secondary)">
-        An interactive Tableau dashboard for HR data insights like attrition, department-wise analysis, satisfaction levels, and performance metrics.
-      </p>
-      <div class="tech-tags">
-        <span class="badge bg-dark">Tableau</span>
-        <span class="badge bg-dark">HR Analytics</span>
-      </div>
-      <div class="mt-3 d-flex gap-2">
-        <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
-        <a href="https://github.com/ramsundar37/hr-analytics-tableau" class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!-- Age and Gender Detection Project -->
-<div class="col-md-6 col-lg-4" data-category="ml and DL">
-  <div class="card">
-    <div class="video-wrapper" style="position: relative;">
-      <!-- Thumbnail image shown first -->
-      <img src="images/age_gender_thumbnail.png" alt="Age Gender Detection" class="card-img-top" style="height: 200px; object-fit: cover;">
-      
-     
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--accent-blue)">Age & Gender Detection</h5>
-      <p class="card-text" style="color: var(--text-secondary)">
-        Real-time computer vision system that detects age group and gender from webcam feed using pre-trained CNN models with OpenCV. Ideal for demographic analysis and smart kiosks.
-      </p>
-      <div class="tech-tags">
-        <span class="badge bg-dark">Python</span>
-        <span class="badge bg-dark">OpenCV</span>
-        <span class="badge bg-dark">CNN</span>
-      </div>
-      <div class="mt-3 d-flex gap-2 flex-wrap">
-       
-        <a href="https://github.com/ramsundar37/Traffic-sign-recognition" class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-      <!-- IPL Dugout Data Visualization Project -->
-<div class="col-md-6 col-lg-4" data-category="data">
-  <div class="card">
-    <div class="video-wrapper" style="position: relative;">
-      <!-- Static dashboard image -->
-      <img src="images/ipldugout.png" alt="IPL Dugout Dashboard" class="card-img-top" style="height: 200px; object-fit: cover;"> 
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--accent-blue)">IPL Dugout - Performance Dashboard</h5>
-      <p class="card-text" style="color: var(--text-secondary)">
-        Interactive IPL dashboard that visualizes player and team statistics including runs, wickets, strike rates, and win percentages. Built using Python data tools for deep cricket analytics.
-      </p>
-      <div class="tech-tags">
-        <span class="badge bg-dark">Python</span>
-        <span class="badge bg-dark">Pandas</span>
-        <span class="badge bg-dark">Matplotlib</span>
-        <span class="badge bg-dark">Seaborn</span>
-      </div>
-      <div class="mt-3 d-flex gap-2 flex-wrap">
-        
-        <a href="https://github.com/ramsundar37/IPL_Data_Dugout" class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-      
- 
-    </div>
-  </div>
-</section>
-
-
-
-       <!-- Experience Section -->
-   <section id="experience" class="section bg-dark">
-  <div class="container">
-    <h2 class="section-title">Experience & Learning Journey</h2>
-    
-    <div class="timeline">
-      <!-- Basics -->
-      <div class="timeline-item left">
-        <div class="timeline-content">
-          <h4>Started learning Basic  in Java, Python, SQL, PL/SQL</h4>
-          <p class="timeline-date">2022-Present</p>
-          <p class="text-muted">Started learining with DSA and OOPS concepts using python</p>
-          
-        </div>
-      </div>
-      
-      <!-- UI/UX -->
-      <div class="timeline-item right">
-        <div class="timeline-content">
-          <h4>Certification in  UI/UX (Figma)</h4>
-          <p class="timeline-date">2023-Present</p>
-          <p class="text-muted">Project - Travelmate</p>
-         
-        </div>
+        <a href="doc/Ramsundar_resume.pdf" class="btn-hero" download>
+          Download Resume
+        </a>
+        <button class="btn-hero" data-bs-toggle="modal" data-bs-target="#resumeModal">
+          Show Resume
+        </button>
       </div>
 
-      <!-- Data Visualization -->
-      <div class="timeline-item left">
-        <div class="timeline-content">
-          <h4>Self-Taught Data visualization</h4>
-          <p class="timeline-date">2023-Present</p>
-        
-          <ul class="text-muted">
-            <li>Learned through: Udemy | YouTube | Practical Projects</li>
-            <li>Developed visualization project using Matplotlib and Seaborn</li>
-            <li>learned NumPy and Pandas</li>
-            
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Data Analyts -->
-      <div class="timeline-item right">
-        <div class="timeline-content">
-          <h4>Data Analytics</h4>
-          <p class="timeline-date">2024-Present</p>
-          <ul class="text-muted">
-            <li>Created interactive dashboards (Tableau) to streamline  data  analysis</li>
-            <li>PowerBi Hands-on Pratice</li>
-            <li>Excel</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- ML/DL Enthusiast -->
-      <div class="timeline-item left">
-        <div class="timeline-content">
-          <h4>Ml/DL Enthusiast (Career Goal)(Learning in Progress)</h4>
-          <p class="timeline-date">2024-Present</p>
-          <ul class="text-muted">
-    
-            <li>Working on DL and ML projects: classification, regression, and clustering</li>
-            <li>IEEE published in 2024 During Final year Project</li>
-          </ul>
-        </div>
-      </div>
 
-      <!-- Data Science/AI -->
-      <div class="timeline-item right">
-        <div class="timeline-content">
-          <h4>AI and Data Science  (Career Goal) (Learning in Progress)</h4>
-          <p class="timeline-date">2025-Present</p>
-          <p class="text-muted">Currently learning to become a Data Scientist or AI </p>
-          <ul class="text-muted">
-            <li>Studying AI, Data Science from online platforms (Udemy, YouTube)</li>
-      
-            <li>Exploring open-source AI models and contributing to GitHub</li>
-          </ul>
-        </div>
+      <!-- Social Links -->
+      <div class="social-links mt-4">
+
+        <!-- GitHub -->
+        <a href="https://github.com/ramsundar37" target="_blank" class="social-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:ramsundar3773@gmail.com" class="social-icon" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ramsundar-b-b7b324246" target="_blank" class="social-icon"
+          aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-    <!-- Certifications Section -->
-<section id="certifications" class="section">
-  <div class="container">
-    <h2 class="section-title">Certifications</h2>
-    
-    <div class="row">
-      <!-- Certificate 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="certification card h-100">
-          <div class="card-body text-center">
-            <i class="fas fa-certificate fa-3x mb-3" style="color: var(--accent-blue)"></i>
-            <h5 style="color: var(--text-third);">UI/UX</h5>
-            <p style="color: var(--text-third);">Issued: January 2023 by Macincode</p>
-            <button class="btn btn-sm btn-custom mt-2" data-bs-toggle="modal" data-bs-target="#cert1">
-              View Credential
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Certificate 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="certification card h-100">
-          <div class="card-body text-center">
-            <i class="fas fa-certificate fa-3x mb-3" style="color: var(--accent-blue)"></i>
-            <h5 style="color: var(--text-third);">Python Development with Data Science</h5>
-            <p style="color: var(--text-third);">Issued: March 2025 by Udemy</p>
-            <button class="btn btn-sm btn-custom mt-2" data-bs-toggle="modal" data-bs-target="#cert2">
-              View Credential
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Certificate 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="certification card h-100">
-          <div class="card-body text-center">
-            <i class="fas fa-certificate fa-3x mb-3" style="color: var(--accent-blue)"></i>
-            <h5 style="color: var(--text-third);">Advance Computer Application</h5>
-            <p style="color: var(--text-third);">Issued: June 2021 by Soft Solution Institution</p>
-            <button class="btn btn-sm btn-custom mt-2" data-bs-toggle="modal" data-bs-target="#cert3">
-              View Credential
-            </button>
-          </div>
+  <!-- Resume Modal -->
+  <div class="modal fade" id="resumeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--bg-base); height: 90vh;">
+        <div class="modal-body p-0">
+          <embed src="doc/Ramsundar_resume.pdf" type="application/pdf" width="100%" height="100%">
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Certificate Modals -->
-<div class="modal fade" id="cert1" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content" style="background-color: var(--secondary-blue);">
-      <div class="modal-body text-center">
-        <img src="images\UI.UX.jpeg" alt="UI/UX Certificate" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="cert2" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content" style="background-color: var(--secondary-blue);">
-      <div class="modal-body text-center">
-        <img src="images/IBM.png" alt="Python DS Certificate" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="cert3" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content" style="background-color: var(--secondary-blue);">
-      <div class="modal-body text-center">
-        <img src="images/softsoln.jpg" alt="Advance Application Certificate" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Communication -->
-<section id="communication" class="section">
-  <div class="container">
-    <h2 class="section-title">Communication</h2>
-    
-    <!-- Row 1: English & German -->
-    <div class="row">
-      <!-- English / IELTS -->
-      <div class="col-md-6 mb-4">
-        <div class="card p-4 h-100 text-center">
-          <h3 style="color: var(--text-third);">English</h3>
-          <p style="color: var(--text-third); ">IELTS Score: 6.5</p>
-          <a class="btn btn-sm btn-custom mt-2" data-bs-toggle="modal" data-bs-target="#ieltsCert">
-            View Certificate
-          </a>
-        </div>
-      </div>
-
-      <!-- German -->
-      <div class="col-md-6 mb-4">
-        <div class="card p-4 h-100 text-center">
-          <h3 style="color: var(--text-third);">German Language</h3>
-          <p style="color: var(--text-third); ">A1* (Currently Learning)</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 2: Tamil (left aligned) -->
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card p-4 h-100 text-center">
-          <h3 style="color: var(--text-third);">Tamil</h3>
-          <p style="color: var(--text-third); ">Native Language</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- IELTS Certificate Modal -->
-<div class="modal fade" id="ieltsCert" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content" style="background-color: var(--fourth); height: 90vh;">
-      <div class="modal-body p-0">
-        <embed src="doc/IELTS MARKSHEET.pdf" type="application/pdf" width="100%" height="100%">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Connect Section -->
-<section id="connect" class="section">
-  <div class="container">
-    <h2 class="section-title text-center">🌐 Connect with Me</h2>
-    <div class="row justify-content-center">
-      <!-- GitHub -->
-      <div class="col-md-6 mb-4">
-        <div class="card text-center p-4 h-100">
-          <img src="images/github.png" 
-               alt="GitHub Banner" 
-               class="img-fluid mb-3 rounded shadow">
-          <a href="https://github.com/ramsundar37" target="_blank" 
-             class="btn btn-sm btn-custom mt-2">
-            Visit GitHub
-          </a>
-        </div>
-      </div>
-      <!-- LinkedIn -->
-      <div class="col-md-4 mb-4">
-        <div class="card text-center p-4 h-100">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
-               alt="LinkedIn Logo" 
-               class="img-fluid mb-3" 
-               style="max-width:120px; margin:auto;">
-          <a href="https://www.linkedin.com/in/ramsundar37" target="_blank" 
-             class="btn btn-sm btn-custom mt-2">
-            Visit LinkedIn
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-   <!-- Updated Contact Section -->
-<section id="contact" class="section bg-dark">
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about-section">
     <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
+
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="section-title">
+          About <span class="gradient-text">Me</span>
+        </h2>
+      </div>
+
+      <!-- About Grid -->
+      <div class="about-grid">
+
+        <!-- LEFT CONTENT -->
+        <div class="about-left" data-aos="fade-right">
+
+          <div class="about-emoji">
+            <p>👋 Hi! I’m <strong>Ramsundar</strong></p>
+            <p>🔍 You can find me online as <strong>ramsundar37</strong></p>
+            <p>💻 Passionate about AI & Data Science</p>
+            <p>📊 Turning data into insights</p>
+            <p>🤖 Building ML & AI systems</p>
+          </div>
+
+          <p class="about-text">
+            I’m a <strong>B.E. Computer Science</strong> graduate with a strong
+            interdisciplinary foundation in
+            <strong>Data Analytics, Visualization, Data Science, and UI/UX</strong>.
+          </p>
+
+          <p class="about-text">
+            I’ve built predictive models and dashboards using
+            <strong>Python, SQL, Power BI, Tableau, and Figma</strong>.
+            Currently, I’m deepening my knowledge in
+            <strong>Machine Learning and Artificial Intelligence</strong>
+            through hands-on projects.
+          </p>
+
+        </div>
+
+        <!-- RIGHT SIDE: LADDER ANIMATION -->
+        <div class="education-ladder-reference" data-aos="fade-left">
+          <div class="edu-header">
+            <h3><i class="fas fa-graduation-cap"></i> <span class="gradient-text1">Education Timeline</span></h3>
+          </div>
+
+          <div class="ladder-layout">
+            <!-- Left Side: Interactive Ladder -->
+            <div class="ladder-side">
+              <div class="ladder-rail-container">
+                <div class="rail left"></div>
+                <div class="rail right"></div>
+                <div class="rungs-container">
+                  <div class="rung"></div>
+                  <div class="rung"></div>
+                  <div class="rung"></div>
+                  <div class="rung"></div>
+                  <div class="rung"></div>
+                  <div class="rung"></div>
+                  <div class="rung"></div>
+                </div>
+
+                <!-- Scroll-Synced Climber -->
+                <div class="scroll-climber" id="scrollClimber">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="climber-svg">
+                    <circle cx="20" cy="10" r="5" fill="currentColor" />
+                    <rect x="15" y="17" width="10" height="15" rx="3" fill="currentColor" />
+                    <rect x="13" y="30" width="4" height="8" rx="2" fill="white" class="leg-l" />
+                    <rect x="23" y="30" width="4" height="8" rx="2" fill="white" class="leg-r" />
+                    <rect x="10" y="19" width="4" height="8" rx="2" fill="currentColor" class="arm-l" />
+                    <rect x="26" y="19" width="4" height="8" rx="2" fill="currentColor" class="arm-r" />
+                  </svg>
+
+                  <!-- Speech Bubble -->
+                  <div class="climber-speech" id="climberSpeech">
+                    <div class="speech-box">
+                      <p>Time is moving fast...</p>
+                      <i class="fas fa-caret-down speech-arrow"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Education Column (The Trigger) -->
+            <div class="education-steps-column" id="eduColumn">
+              <div class="edu-card-ref">
+                <div class="edu-dot"></div>
+                <div class="edu-info">
+                  <h4>M.Sc. Artificial intelligence</h4>
+                  <p class="edu-year">BTU Cottbus 2026*</p>
+                </div>
+              </div>
+              <div class="edu-card-ref">
+                <div class="edu-dot"></div>
+                <div class="edu-info">
+                  <h4>B.E. Computer Science</h4>
+                  <p class="edu-year">Sathyabama (2024)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">
+          My <span class="gradient-text">Skills</span>
+        </h2>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="row skills-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="col-md-6">
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>Python</span>
+              <span>80%</span>
+            </div>
+            <div class="bar">
+              <div class="fill" data-width="80"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>SQL</span>
+              <span>85%</span>
+            </div>
+            <div class="bar">
+              <div class="fill" data-width="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>Probability & Statistics</span>
+              <span>75%</span>
+            </div>
+            <div class="bar">
+              <div class="fill" data-width="75"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>PL/SQL</span>
+              <span>70%</span>
+            </div>
+            <div class="bar">
+              <div class="fill" data-width="70"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="col-md-6">
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>UI / UX</span>
+              <span>90%</span>
+            </div>
+            <div class="bar">
+              <div class="fill" data-width="90"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>Power BI</span>
+              <span>80%</span>
+            </div>
+            <div class="bar">
+              <div class="fill" data-width="80"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>Tableau</span>
+              <span>80%</span>
+            </div>
+            <div class="bar">
+              <div class="fill" data-width="80"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>HTML / CSS</span>
+              <span>70%</span>
+            </div>
+            <div class="bar">
+              <div class="fill" data-width="70"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Skill Tags -->
+      <div class="skill-tags reveal">
+        <span class="skill-tag">Python (OOPS & DSA)</span>
+        <span class="skill-tag">Web Scraping (BeautifulSoup & API)</span>
+        <span class="skill-tag">DL</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Seaborn</span>
+        <span class="skill-tag">Data Analytics</span>
+        <span class="skill-tag">Mathplotlib</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">Computer Vision</span>
+        <span class="skill-tag">Excel</span>
+
+      </div>
+
+
+      <!-- Radar Chart -->
+      <div class="radar-chart-container" data-aos="fade-up" data-aos-delay="150">
+        <h3 class="chart-title">
+          <span class="gradient-text1">Skill Strength Overview 🕸️</span>
+        </h3>
+        <canvas id="skillRadarChart"></canvas>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Skills & Tools & Publications Section -->
+  <section id="skills-tools-publications" class="section">
+    <div class="container">
+
+      <!-- Skills & Tools Section -->
+      <div id="skills-tools" class="skills-section1">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title">
+            Skills & <span class="gradient-text">Tools</span>
+          </h2>
+        </div>
+
+        <!-- ROW 1 : 5 ITEMS -->
+        <div class="row justify-content-center skills-row">
+          <div class="col-6 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="tool-card">
+              <img src="images/excel.png" alt="Excel">
+            </div>
+            <span class="tool-name">Excel</span>
+          </div>
+
+          <div class="col-6 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="tool-card">
+              <img src="images/vscode1.png" alt="VS Code">
+            </div>
+            <span class="tool-name">VS Code</span>
+          </div>
+
+          <div class="col-6 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="tool-card">
+              <img src="images/canva1.png" alt="Canva">
+            </div>
+            <span class="tool-name">Canva</span>
+          </div>
+
+          <div class="col-6 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="tool-card">
+              <img src="images/powerbi.png" alt="Power BI">
+            </div>
+            <span class="tool-name">Power BI</span>
+          </div>
+
+          <div class="col-6 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="500">
+            <div class="tool-card">
+              <img src="images/Tableau.png" alt="Tableau">
+            </div>
+            <span class="tool-name">Tableau</span>
+          </div>
+        </div>
+
+        <!-- ROW 2 : CENTERED 3 ITEMS -->
+        <div class="row justify-content-center skills-row mt-3">
+          <div class="col-6 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="tool-card">
+              <img src="images/python.gif" alt="Python">
+            </div>
+            <span class="tool-name">Python</span>
+          </div>
+
+          <div class="col-6 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="tool-card">
+              <img src="images/Sql.png" alt="SQL">
+            </div>
+            <span class="tool-name">SQL & PL/SQL</span>
+          </div>
+
+          <div class="col-6 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="tool-card">
+              <img src="images/figma1.gif" alt="Figma">
+            </div>
+            <span class="tool-name">Figma (UI/UX)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publications Section -->
+      <div id="publications" class="publications-section" style="margin-top: 60px;">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="gradient-text">Publications</span>
+          </h2>
+        </div>
+
+        <!-- AOS WRAPPER (no transform here) -->
+        <div class="publication-item" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-out-cubic">
+
+          <!-- FLOATING CARD -->
+          <div class="publication-card">
+
+            <h3 class="publication-title">
+              <div class="publication-icon"> <i class="fas fa-file-alt"></i></div>
+              Traffic Sign Recognition Using Shift Invariant 2-D ConvNet
+            </h3>
+
+            <p class="publication-meta">
+              Published in IEEE — 2024
+            </p>
+
+            <a href="https://ieeexplore.ieee.org/document/10544943" target="_blank" class="btn-publication">
+              Read Paper
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">
+          Featured <span class="gradient-text">Work</span>
+        </h2>
+      </div>
+
+      <!-- Project Filters -->
+      <div class="project-filters">
+        <button class="active" data-filter="all" style="color:var(--text-main);">All</button>
+        <button data-filter="data" style="color:var(--text-main);">Data Analytics and Data Visualization</button>
+        <button data-filter="web" style="color:var(--text-main);">UI/UX</button>
+        <button data-filter="design" style="color:var(--text-main);">Blender</button>
+        <button data-filter="ml and DL" style="color:var(--text-main);">ML and DL Projects</button>
+        <button data-filter="Ai and Ds" style="color: var(--text-main);">AI and Data Science</button>
+      </div>
+
+
+
+
+      <div class="row g-4">
+
+        <!-- TravelMate App UI/UX Project -->
+        <div class="col-md-6 col-lg-4" data-category="web">
+          <div class="card">
+            <div class="video-wrapper" style="position: relative;">
+              <!-- Image thumbnail shown by default -->
+              <img src="images/figma UI.png" alt="TravelMate UI Design" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+
+              <!-- Hidden video demo (revealed on button click) -->
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                <source src="videos/figma UI.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: var(--accent-blue)">TravelMate - UI/UX Case Study</h5>
+              <p class="card-text" style="color: var(--text-secondary)">
+                A responsive mobile travel booking app designed using Figma, featuring location search, itinerary
+                planner, and calendar integration with intuitive user flows.
+              </p>
+              <div class="tech-tags">
+                <span class="badge bg-dark">Figma</span>
+                <span class="badge bg-dark">UI/UX</span>
+                <span class="badge bg-dark">Prototype</span>
+              </div>
+              <div class="mt-3 d-flex gap-2 flex-wrap">
+                <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
+                <a href="https://www.figma.com/proto/o1bcBh6bxMCwSdYDAydJDn/TravelMate?node-id=2-287&p=f&t=fIjKoG2gyBt54T7Z-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=80%3A1229"
+                  class="btn btn-sm btn-custom-secondary" target="_blank">View Design</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Traffic Sign Recognition Project -->
+        <div class="col-md-6 col-lg-4" data-category="ml and DL">
+          <div class="card">
+            <div class="video-wrapper" style="position: relative;">
+
+              <img src="images/traffic sign.png" alt="Traffic Sign Recognition" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+
+
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                <source src="videos/traffic sign reco.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: var(--accent-blue)">Traffic Sign Recognition (IEEE 2024)</h5>
+              <p class="card-text" style="color: var(--text-secondary)">
+                Deep learning system for recognizing traffic signs using Shift Invariant 2D ConvNet. Streamlit-powered
+                UI for testing in real time.
+              </p>
+              <div class="tech-tags">
+                <span class="badge bg-dark">Python</span>
+                <span class="badge bg-dark">PyTorch</span>
+                <span class="badge bg-dark">Streamlit</span>
+                <span class="badge bg-dark">OpenCV</span>
+              </div>
+              <div class="mt-3 d-flex gap-2">
+                <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
+                <a href="https://github.com/ramsundar37/Traffic-sign-recognition"
+                  class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- powerbi -->
+        <div class="col-md-6 col-lg-4" data-category="data">
+          <div class="card">
+            <div class="video-wrapper" style="position: relative;">
+              <img src="images/Blinkit.png" alt="power BI" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                <source src="videos/blikitpowerbi.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: var(--accent-blue)">Blinkit Dashboard - PowerBi</h5>
+              <p class="card-text" style="color: var(--text-secondary)">
+                Power BI dashboard visualizing order insights, categories, delivery trends and more for Blinkit.
+              </p>
+              <div class="tech-tags">
+                <span class="badge bg-dark">Power BI</span>
+                <span class="badge bg-dark">BI Visualization</span>
+              </div>
+              <div class="mt-3 d-flex gap-2">
+                <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
+                <a href="https://github.com/ramsundar37/Blinkit_powerBi" class="btn btn-sm btn-custom-secondary"
+                  target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-category="data">
+          <div class="card">
+            <div class="video-wrapper" style="position: relative;">
+              <img src="images/iplanalysis_powerbi.png" alt="power BI" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                <source src="videos/iplanalysis_powerbi.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: var(--accent-blue)">IPL Analysis - PowerBi Dashboard</h5>
+              <p class="card-text" style="color: var(--text-secondary)">
+                Power BI dashboard visualizing IPL analysis.
+              </p>
+              <div class="tech-tags">
+                <span class="badge bg-dark">Power BI</span>
+                <span class="badge bg-dark">BI Visualization</span>
+              </div>
+              <div class="mt-3 d-flex gap-2">
+                <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
+                <a href="https://github.com/ramsundar37/IPL_Analysis_PowerBi" class="btn btn-sm btn-custom-secondary"
+                  target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tableau -->
+        <div class="col-md-6 col-lg-4" data-category="data">
+          <div class="card">
+            <div class="video-wrapper" style="position: relative;">
+              <img src="images/Blinkit-Tableau.png" alt="power BI" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                <source src="videos/Tableau_Blinkit.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: var(--accent-blue)">Blinkit Dashboard - Tableau</h5>
+              <p class="card-text" style="color: var(--text-secondary)">
+                Power BI dashboard visualizing order insights, categories, delivery trends and more for Blinkit.
+              </p>
+              <div class="tech-tags">
+                <span class="badge bg-dark">Tableau</span>
+                <span class="badge bg-dark"> Visualization</span>
+              </div>
+              <div class="mt-3 d-flex gap-2">
+                <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
+                <a href="https://github.com/ramsundar37/Tableau_Blinkit" class="btn btn-sm btn-custom-secondary"
+                  target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tableau -->
+        <div class="col-md-6 col-lg-4" data-category="data">
+          <div class="card">
+            <div class="video-wrapper" style="position: relative;">
+              <img src="images/Tableau_Hranaly.png" alt="HR Analytics" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                <source src="videos/Tableau Hranaly.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: var(--accent-blue)">HR Analytics Dashboard(Tableau)</h5>
+              <p class="card-text" style="color: var(--text-secondary)">
+                An interactive Tableau dashboard for HR data insights like attrition, department-wise analysis,
+                satisfaction levels, and performance metrics.
+              </p>
+              <div class="tech-tags">
+                <span class="badge bg-dark">Tableau</span>
+                <span class="badge bg-dark">HR Analytics</span>
+              </div>
+              <div class="mt-3 d-flex gap-2">
+                <button class="btn btn-sm btn-custom" onclick="playTrafficVideo(this)">View Demo</button>
+                <a href="https://github.com/ramsundar37/hr-analytics-tableau" class="btn btn-sm btn-custom-secondary"
+                  target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- Age and Gender Detection Project -->
+        <div class="col-md-6 col-lg-4" data-category="ml and DL">
+          <div class="card">
+            <div class="video-wrapper" style="position: relative;">
+              <!-- Thumbnail image shown first -->
+              <img src="images/age_gender_thumbnail.png" alt="Age Gender Detection" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+
+
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: var(--accent-blue)">Age & Gender Detection</h5>
+              <p class="card-text" style="color: var(--text-secondary)">
+                Real-time computer vision system that detects age group and gender from webcam feed using pre-trained
+                CNN models with OpenCV. Ideal for demographic analysis and smart kiosks.
+              </p>
+              <div class="tech-tags">
+                <span class="badge bg-dark">Python</span>
+                <span class="badge bg-dark">OpenCV</span>
+                <span class="badge bg-dark">CNN</span>
+              </div>
+              <div class="mt-3 d-flex gap-2 flex-wrap">
+
+                <a href="https://github.com/ramsundar37/Traffic-sign-recognition"
+                  class="btn btn-sm btn-custom-secondary" target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- IPL Dugout Data Visualization Project -->
+        <div class="col-md-6 col-lg-4" data-category="data">
+          <div class="card">
+            <div class="video-wrapper" style="position: relative;">
+              <!-- Static dashboard image -->
+              <img src="images/ipldugout.png" alt="IPL Dugout Dashboard" class="card-img-top"
+                style="height: 200px; object-fit: cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: var(--accent-blue)">IPL Dugout - Performance Dashboard</h5>
+              <p class="card-text" style="color: var(--text-secondary)">
+                Interactive IPL dashboard that visualizes player and team statistics including runs, wickets, strike
+                rates, and win percentages. Built using Python data tools for deep cricket analytics.
+              </p>
+              <div class="tech-tags">
+                <span class="badge bg-dark">Python</span>
+                <span class="badge bg-dark">Pandas</span>
+                <span class="badge bg-dark">Matplotlib</span>
+                <span class="badge bg-dark">Seaborn</span>
+              </div>
+              <div class="mt-3 d-flex gap-2 flex-wrap">
+
+                <a href="https://github.com/ramsundar37/IPL_Data_Dugout" class="btn btn-sm btn-custom-secondary"
+                  target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">
+          Experience & <span class="gradient-text">Learning Journey</span>
+        </h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h4>Started learning Basic in Java, Python, SQL, PL/SQL</h4>
+            <p class="timeline-date">2022–Present</p>
+            <p class="text-muted">Started learning with DSA and OOPS concepts using Python</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h4>Certification in UI/UX (Figma)</h4>
+            <p class="timeline-date">2023–Present</p>
+            <p class="text-muted">Project – Travelmate</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h4>Self-Taught Data Visualization</h4>
+            <p class="timeline-date">2023–Present</p>
+            <ul class="text-muted">
+              <li>Learned through: Udemy | YouTube | Practical Projects</li>
+              <li>Developed visualization projects using Matplotlib and Seaborn</li>
+              <li>Learned NumPy and Pandas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h4>Data Analytics</h4>
+            <p class="timeline-date">2024–Present</p>
+            <ul class="text-muted">
+              <li>Created interactive dashboards (Tableau) to streamline data analysis</li>
+              <li>Power BI hands-on practice</li>
+              <li>Excel</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h4>ML/DL Enthusiast (Career Goal) — Learning in Progress</h4>
+            <p class="timeline-date">2024–Present</p>
+            <ul class="text-muted">
+              <li>Working on DL and ML projects: classification, regression, and clustering</li>
+              <li>IEEE published in 2024 during Final Year Project</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h4>AI and Data Science (Career Goal) — Learning in Progress</h4>
+            <p class="timeline-date">2025–Present</p>
+            <p class="text-muted">Currently learning to become a Data Scientist or AI engineer</p>
+            <ul class="text-muted">
+              <li>Studying AI, Data Science from online platforms (Udemy, YouTube)</li>
+              <li>Exploring open-source AI models and contributing to GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <!-- Certifications & Communication Section -->
+  <section id="education-extras" class="section">
+    <div class="container">
+      <!-- Certifications Content -->
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">
+          <span class="gradient-text">Certifications</span>
+        </h2>
+      </div>
+      <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+          <div class="certification card h-100">
+            <div class="card-body text-center">
+              <div class="certificate-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="6" r="3" stroke="currentColor" stroke-width="2" fill="none" />
+                  <path d="M9 9l-1 8h8l-1-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none" />
+                  <path d="M8 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h5 style="color: var(--text-primary)">UI/UX</h5>
+              <p style="color: var(--text-secondary)">Issued: January 2023 by Macincode</p>
+              <button class="btn btn-custom btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#cert1">View
+                Credential</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="certification card h-100">
+            <div class="card-body text-center">
+              <div class="certificate-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="6" r="3" stroke="currentColor" stroke-width="2" fill="none" />
+                  <path d="M9 9l-1 8h8l-1-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none" />
+                  <path d="M8 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h5 style="color: var(--text-primary)">Python Development with Data Science</h5>
+              <p style="color: var(--text-secondary)">Issued: March 2025 by Udemy</p>
+              <button class="btn btn-custom btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#cert2">View
+                Credential</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="certification card h-100">
+            <div class="card-body text-center">
+              <div class="certificate-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="6" r="3" stroke="currentColor" stroke-width="2" fill="none" />
+                  <path d="M9 9l-1 8h8l-1-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none" />
+                  <path d="M8 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h5 style="color: var(--text-primary)">Advance Computer Application</h5>
+              <p style="color: var(--text-secondary)">Issued: June 2021 by Soft Solution Institution</p>
+              <button class="btn btn-custom btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#cert3">View
+                Credential</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Communication Content (now merged into same section) -->
+      <div class="section-header text-center mb-5 pt-4">
+        <h2 class="section-title">
+          <span class="gradient-text">Communication</span>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card p-4 h-100 text-center">
+            <h3 style="color: var(--text-primary)">English</h3>
+            <p style="color: var(--text-secondary)">IELTS Score: 6.5</p>
+            <button class="btn btn-custom btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#ieltsCert">View
+              Certificate</button>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-4 h-100 text-center">
+            <h3 style="color: var(--text-primary)">German Language</h3>
+            <p style="color: var(--text-secondary)">A1* (Currently Learning)</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-4 h-100 text-center">
+            <h3 style="color: var(--text-primary)">Tamil</h3>
+            <p style="color: var(--text-secondary)">Native Language</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate & IELTS Modals -->
+  <div class="modal fade" id="cert1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--bg-base);">
+        <div class="modal-body text-center">
+          <img src="images/UI.UX.jpeg" alt="UI/UX Certificate" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="cert2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--bg-base);">
+        <div class="modal-body text-center">
+          <img src="images/IBM.png" alt="Python DS Certificate" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="cert3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--bg-base);">
+        <div class="modal-body text-center">
+          <img src="images/softsoln.jpg" alt="Advance Application Certificate" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="ieltsCert" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--bg-base); height: 90vh;">
+        <div class="modal-body p-0">
+          <embed src="doc/IELTS MARKSHEET.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Activity Section (GitHub & Spotify) -->
+  <section id="activity" class="section activity-section">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <!-- GitHub Contribution Graph -->
+        <div class="col-lg-7" data-aos="fade-up">
+          <div class="activity-header">
+            <i class="fab fa-github gradient-text-pink-cyan"></i>
+            <h2 class="h3 mb-0 gradient-text-pink-cyan">GitHub Contributions</h2>
+          </div>
+          <div class="activity-card github-activity p-4 h-100">
+            <div class="month-labels">
+              <span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span>
+            </div>
+            <div class="github-graph-container">
+              <div class="github-graph">
+                <div class="graph-grid">
+                  <!-- Generated via main.js -->
+                </div>
+              </div>
+            </div>
+            <div class="github-graph-footer">
+              <span>368 contributions in the last year</span>
+              <div class="d-flex align-items-center gap-1">
+                <span class="small me-1">Less</span>
+                <div class="graph-square level-0"></div>
+                <div class="graph-square level-1"></div>
+                <div class="graph-square level-2"></div>
+                <div class="graph-square level-3"></div>
+                <div class="graph-square level-4"></div>
+                <span class="small ms-1">More</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spotify Coding Partner -->
+        <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="activity-header">
+            <i class="fas fa-music gradient-text-pink-cyan"></i>
+            <h2 class="h3 mb-0 gradient-text-pink-cyan">Coding Partner</h2>
+          </div>
+          <div class="activity-card spotify-status p-4 h-100">
+            <div class="spotify-preview-tag">Preview</div>
+
+            <div class="spotify-now-playing-header">
+              <div class="spotify-art-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d0000b273b7496660fc64ee2679586119" alt="Album Art"
+                  class="img-fluid">
+              </div>
+              <div class="spotify-header-info">
+                <div class="d-flex justify-content-between align-items-start">
+                  <h4 class="mb-0">Daily Mix 1</h4>
+                  <i class="fab fa-spotify" style="color: white; font-size: 1.2rem;"></i>
+                </div>
+                <p class="small opacity-75 mb-0">Made for 31cyevn7nyyyxrog7j42jcvhlg7u</p>
+                <a href="https://open.spotify.com/playlist/4oZ1QqlyIXqJpxWOTflyJu?si=No0uDxSBQuC_af1L396w-w"
+                  target="_blank" class="spotify-btn-save text-decoration-none">
+                  <i class="far fa-plus-square"></i>
+                  Save on Spotify
+                </a>
+              </div>
+            </div>
+
+            <div class="spotify-controls">
+              <i class="fas fa-step-backward"></i>
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+              <i class="fas fa-step-forward"></i>
+            </div>
+
+            <div class="spotify-tracklist">
+              <div class="spotify-track-item">
+                <span class="track-number">1</span>
+                <div class="track-info">
+                  <div class="text-truncate">Dilbar Ki Aankhon Ka (From "Thamma") [Feat. No...</div>
+                  <div class="track-artist text-truncate">Sachin-Jigar, Rashmeet Kaur, Jigar Saraiya, Amitabh
+                    Bhattacharya</div>
+                </div>
+                <span class="track-duration">02:49</span>
+              </div>
+              <div class="spotify-track-item">
+                <span class="track-number">2</span>
+                <div class="track-info">
+                  <div class="text-truncate">Enna Sona</div>
+                  <div class="track-artist text-truncate">A.R. Rahman, Arijit Singh</div>
+                </div>
+                <span class="track-duration">03:33</span>
+              </div>
+              <div class="spotify-track-item">
+                <span class="track-number">3</span>
+                <div class="track-info">
+                  <div class="text-truncate">Tum Se Hi</div>
+                  <div class="track-artist text-truncate">Pritam, Mohit Chauhan, Irshad Kamil</div>
+                </div>
+                <span class="track-duration">05:21</span>
+              </div>
+              <!-- Extra tracks for scrolling feel -->
+              <div class="spotify-track-item">
+                <span class="track-number">4</span>
+                <div class="track-info">
+                  <div class="text-truncate">Blinding Lights</div>
+                  <div class="track-artist text-truncate">The Weeknd</div>
+                </div>
+                <span class="track-duration">03:20</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect Section (old portfolio: card sizes col-md-6, col-md-4) -->
+  <section id="connect" class="section">
+    <div class="container">
+      <h2 class="section-title text-center"><span class="gradient-text1"> 🌐Connect </span> <span class="gradient-text">
+          with Me </span> </h2>
       <div class="row justify-content-center">
+        <div class="col-md-6 mb-4">
+          <div class="card text-center p-4 h-100 connect-card">
+            <img src="images/github.png" alt="GitHub Banner" class="img-fluid mb-3 rounded shadow">
+            <a href="https://github.com/ramsundar37" target="_blank" class="btn btn-sm btn-custom mt-2">Visit GitHub</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card text-center p-4 h-100 connect-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" class="img-fluid mb-3"
+              style="max-width: 120px; margin: auto;">
+            <a href="https://www.linkedin.com/in/ramsundar37" target="_blank" class="btn btn-sm btn-custom mt-2">Visit
+              LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (: two-column, contact icons + glass form) -->
+  <section id="contact" class="section contact-section-rafi">
+    <div class="container">
+      <div class="text-center mb-2 section-header">
+        <h2 class="section-title">Get <span class="gradient-text1">In Touch</span></h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Have a project in mind or just want to say hello? Feel
+          free to reach out!</p>
+      </div>
+      <div class="row g-5">
         <div class="col-lg-6">
-          <form id="contact-form" class="contact-form">
-            <input type="text" id="name" name="from_name" placeholder="Name" required>
-            <input type="email" id="email" name="user_email" placeholder="Email" required>
-            <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
-            <button type="submit" class="btn btn-custom w-100">Send Message</button>
+          <h4 class="fw-semibold mb-4" style="color: var(--text-main)">Let's work together</h4>
+          <p class="text-muted mb-5">I'm always open to discussing new projects, creative ideas, or opportunities to be
+            part of your visions.</p>
+          <div class="d-flex align-items-center gap-4 mb-4">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="text-muted small mb-0">Email</p>
+              <a href="mailto:ramsundar3773@gmail.com" class="fw-medium"
+                style="color: var(--text-main); text-decoration: none">ramsundar3773@gmail.com</a>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-4 mb-4">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <p class="text-muted small mb-0">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/ramsundar-b-b7b324246/" target="_blank" class="fw-medium"
+                style="color: var(--text-main); text-decoration: none">Connect</a>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-4 mb-4">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <p class="text-muted small mb-0">GitHub</p>
+              <a href="https://github.com/ramsundar37" target="_blank" class="fw-medium"
+                style="color: var(--text-main); text-decoration: none">github.com/ramsundar37</a>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <div class="contact-icon"><i class="fab fa-google"></i></div>
+            <div>
+              <p class="text-muted small mb-0">search me on Google (online user id)</p>
+              <a href="https://www.google.com/search?q=ramsundar37" target="_blank" class="fw-medium"
+                style="color: var(--text-main); text-decoration: none">ramsundar37 </a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-6">
+          <form id="contact-form" class="contact-form-rafi glass p-4 p-md-5 rounded-4">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-medium">Name</label>
+                <input type="text" id="name" name="from_name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-medium">Email</label>
+                <input type="email" id="email" name="user_email" class="form-control" placeholder="your@email.com"
+                  required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-medium">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="Project Inquiry">
+            </div>
+            <div class="mb-4">
+              <label class="form-label small fw-medium">Message</label>
+              <textarea name="message" id="message" class="form-control" rows="5"
+                placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-contact w-100 btn-lg"><i class="fas fa-paper-plane me-2"></i>Send
+              Message</button>
           </form>
           <div id="form-status" class="mt-3 text-center"></div>
         </div>
       </div>
     </div>
   </section>
-            
-            <!-- Contact Links -->
-  <div class="contact-links mt-4">
-    <p>Or connect with me directly:</p>
-      <a href="https://www.linkedin.com/in/ramsundar-b-b7b324246/" target="_blank">
-        <i class="h5 fab fa-linkedin"> </i> 
-      </a>
-             
-      <a href="mailto:ramsundar3773@gmail.com" class="email-link">
-        <i class="h5 fas fa-envelope"> </i> 
-      </a>
-      <a href="https://github.com/ramsundar37" target="_blank" class="social-link" aria-label="GitHub">
-          <i class="h5 fab fa-github"> </i>
-      </a>
-          </div>
-        </div>
-      </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <!-- Particles background for footer -->
+    <div id="particles-footer"></div>
+    <div class="container footer-content">
+      <h4>Made with ❤️ by Ramsundar</h4>
+      <p>© 2024 Ramsundar B. All rights reserved.</p>
+
     </div>
+  </footer>
+
+  <!-- SEO (hidden) -->
+  <section style="display:none" aria-hidden="true">
+    <h1>Ramsundar B</h1>
+    <p>Online handle: ramsundar37</p>
+    <p>Portfolio: https://ramsundar37.github.io</p>
+    <p>LinkedIn: https://www.linkedin.com/in/ramsundar-b-b7b324246/</p>
+    <p>GitHub: https://github.com/ramsundar37</p>
+    <p>IEEE Publication: https://ieeexplore.ieee.org/document/10544943</p>
   </section>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center">
-      <div class="container">
-        <p>© 2024 Ramsundar B. All rights reserved.</p>
-      </div>
-    </footer>
+  <!-- Bootstrap JS (for modals) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="main.js"></script>
+</body>
 
-    <!-- for seo meta ,it wonot display -->
-<section style="display:none">
-  <h1>Ramsundar B</h1>
-  <p>Online handle: ramsundar37</p>
-  <p>Portfolio: https://ramsundar37.github.io</p>
-  <p>LinkedIn: https://www.linkedin.com/in/ramsundar-b-b7b324246/</p>
-  <p>GitHub: https://github.com/ramsundar37</p>
-  <p>IEEE Publication: https://ieeexplore.ieee.org/document/10544943</p>
-</section>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="index.js"></script>
-
-  </body>
 </html>
