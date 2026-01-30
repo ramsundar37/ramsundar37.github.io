@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
      =============================== */
   particlesJS("particles-js", {
     particles: {
-      number: { value: 80 },
+      number: { value: 100 },
       color: { value: "#2dd4bf" },
       shape: { type: "circle" },
       opacity: { value: 0.50 },
@@ -505,24 +505,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  /* ===============================
-     PROJECT VIDEO (OLD PORTFOLIO STYLE)
-     =============================== */
-  // traffic sign
-  function playTrafficVideo(button) {
-    const cardBody = button.closest('.card-body');
-    const wrapper = cardBody.previousElementSibling;
-    const img = wrapper.querySelector("img");
-    const video = wrapper.querySelector("video");
 
-    // Hide image and show video
-    img.style.display = "none";
-    video.style.display = "block";
-    video.play();
-
-    // Hide the "View Demo" button after click
-    button.style.display = "none";
-  }
 
   /* ===============================
      FILTER (OLD PORTFOLIO STYLE)
@@ -618,57 +601,108 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ===============================
-     GITHUB ACTIVITY GRAPH GENERATION
+     PROJECT INFO MODAL LOGIC
      =============================== */
-  const graphGrid = document.querySelector('.graph-grid');
-  if (graphGrid) {
-    graphGrid.innerHTML = ''; // Clear existing
-    for (let i = 0; i < 50; i++) {
-      const column = document.createElement('div');
-      column.className = 'graph-column';
-      for (let j = 0; j < 7; j++) {
-        const square = document.createElement('div');
-        // Randomly assign levels, favoring level-0 and level-1 for realism
-        const rand = Math.random();
-        let level = 0;
-        if (rand > 0.8) level = 3;
-        else if (rand > 0.6) level = 2;
-        else if (rand > 0.3) level = 1;
+  const projectModal = document.getElementById('projectModal');
+  const modalClose = document.getElementById('modalClose');
+  const infoButtons = document.querySelectorAll('.btn-info-circle');
 
-        square.className = `graph-square level-${level}`;
-        column.appendChild(square);
-      }
-      graphGrid.appendChild(column);
+  // Modal Elements
+  const mTitle = document.getElementById('modalTitle');
+  const mDescription = document.getElementById('modalDescription');
+  const mTech = document.getElementById('modalTech');
+  const mFeatures = document.getElementById('modalFeatures');
+  const mCodeBtn = document.getElementById('modalCodeBtn');
+
+  function openProjectModal(btn) {
+    const data = btn.dataset;
+
+    // Set Text Content
+    mTitle.textContent = data.project;
+    mDescription.textContent = data.description;
+
+    // Set Tech Badges
+    mTech.innerHTML = '';
+    const techArray = data.tech.split(',').map(t => t.trim());
+    techArray.forEach(tech => {
+      const span = document.createElement('span');
+      span.className = 'modal-tech-tag';
+      span.textContent = tech;
+      mTech.appendChild(span);
+    });
+
+    // Set Features
+    mFeatures.innerHTML = '';
+    const featuresArray = data.features.split(';').map(f => f.trim());
+    featuresArray.forEach(feature => {
+      const li = document.createElement('li');
+      li.className = 'feature-item';
+      li.innerHTML = `<i class="fas fa-check-circle"></i> ${feature}`;
+      mFeatures.appendChild(li);
+    });
+
+    // Set Links
+    mCodeBtn.href = data.code;
+
+    // Show/Hide Code button if # is provided
+    mCodeBtn.style.display = (data.code === '#' || !data.code) ? 'none' : 'inline-flex';
+
+    // Activate Modal
+    projectModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scroll
+
+    // GSAP Animation for modal content
+    gsap.from('.modal-glass-content', {
+      y: 50,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power3.out"
+    });
+  }
+
+  function closeProjectModal() {
+    projectModal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scroll
+  }
+
+  infoButtons.forEach(btn => {
+    btn.addEventListener('click', () => openProjectModal(btn));
+  });
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeProjectModal);
+  }
+
+  // Close on background click
+  projectModal.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+      closeProjectModal();
     }
-  }
+  });
 
-  /* DRAG TO SCROLL FOR GITHUB GRAPH */
-  const slider = document.querySelector('.github-graph-container');
-  if (slider) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+      closeProjectModal();
+    }
+  });
 
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-  }
 });
+
+/* ===============================
+   PROJECT VIDEO (GLOBAL SCOPE)
+   =============================== */
+function playTrafficVideo(button) {
+  const cardBody = button.closest('.card-body');
+  const wrapper = cardBody.previousElementSibling;
+  const img = wrapper.querySelector("img");
+  const video = wrapper.querySelector("video");
+
+  // Hide image and show video
+  img.style.display = "none";
+  video.style.display = "block";
+  video.play();
+
+  // Hide the "View Demo" button after click
+  button.style.display = "none";
+}
