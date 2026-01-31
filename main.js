@@ -130,15 +130,15 @@ document.addEventListener("DOMContentLoaded", () => {
         labels: [
           "Programming",
           "Data Analytics",
-          "Visualization",
+          "Data Visualization",
           "Machine Learning",
           "AI",
-          "Databases"
+          "Data Science"
         ],
         datasets: [
           {
             label: "Proficiency (%)",
-            data: [90, 85, 80, 75, 80, 88],
+            data: [90, 85, 87, 83, 80, 88],
             fill: true,
             backgroundColor: "rgba(45, 212, 191, 0.18)",
             borderColor: "#2dd4bf",

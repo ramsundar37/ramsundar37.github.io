@@ -78,6 +78,15 @@
   background-clip: text;
 }
 
+.text-highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+body.light .text-highlight {
+  color: #000000;
+}
+
 
 
 /* ===============================
@@ -3095,4 +3104,13 @@ body.light .feature-item {
 
 body.light .modal-close-btn {
   color: #64748b;
+}
+
+/* Connect Section Button Refinement */
+.btn-mini {
+  padding: 6px 14px !important;
+  font-size: 0.8rem !important;
+  min-width: 100px;
+  height: auto;
+  line-height: 1.2;
 }
