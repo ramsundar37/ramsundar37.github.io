@@ -50,7 +50,7 @@
   --secondary-blue: rgba(6, 10, 20, 0.9);
   --text-primary: var(--text-main);
   --text-secondary: var(--text-muted);
-  --fifthaccent-blue: var(--cyan-soft);
+  --fifthaccent: #64ffda;
 }
 
 /* Gradient name  ramsundar */
@@ -89,19 +89,14 @@ body.light .text-highlight {
 
 
 
-/* ===============================
-   RESET
-   =============================== */
+/*RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===============================
-   BODY / BACKGROUND
-   =============================== */
-
+/*BODY / BACKGROUND */
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
@@ -119,9 +114,11 @@ body {
   transition: background 0.4s ease, color 0.3s ease;
 }
 
-/* ===============================
-   LIGHT MODE (DIMMED / COMFORT)
-   =============================== */
+/* 
+
+LIGHT MODE (DIMMED / COMFORT) 
+
+*/
 body.light {
   /* Base background */
   --bg-base: #f1f5f9;
@@ -144,7 +141,7 @@ body.light {
   --secondary-blue: #f5f5f5;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
-  --fifthaccent-blue: #0077ff;
+  --fifthaccent: #0077ff;
 
   /* Light mode gradient */
   --gradient-primary: linear-gradient(135deg,
@@ -287,11 +284,7 @@ body.light .navbar-toggler-icon {
   animation: mouse-float 2.2s ease-in-out infinite;
 }
 
-@media (max-width: 768px) {
-  .scroll-indicator {
-    display: none;
-  }
-}
+
 
 .scroll-text {
   display: block;
@@ -305,7 +298,7 @@ body.light .navbar-toggler-icon {
 .mouse {
   width: 26px;
   height: 42px;
-  border: 2px solid var(--cyan-soft);
+  border: 2px solid var(--fifthaccent);
   border-radius: 14px;
   position: relative;
   margin: 0 auto;
@@ -315,7 +308,7 @@ body.light .navbar-toggler-icon {
 .wheel {
   width: 4px;
   height: 8px;
-  background: var(--cyan-soft);
+  background: var(--fifthaccent);
   border-radius: 4px;
   position: absolute;
   top: 8px;
@@ -767,7 +760,7 @@ section {
 .edu-info h4 {
   font-size: 1.25rem;
   margin-bottom: 4px;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .edu-year {
@@ -791,6 +784,36 @@ section {
 .accent-weight {
   color: var(--cyan);
   font-weight: 700;
+}
+
+/* Light mode education cards */
+body.light .edu-card-ref {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.light .edu-card-ref:hover {
+  border-color: rgba(0, 119, 255, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.light .edu-dot {
+  background: rgba(0, 119, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 119, 255, 0.2);
+}
+
+body.light .edu-school {
+  color: #475569;
+}
+
+body.light .edu-board {
+  color: #64748b;
+}
+
+body.light .accent-weight {
+  color: #0077ff;
 }
 
 /* Responsive adjustment */
@@ -2543,6 +2566,10 @@ body.light .footer p {
     padding: 50px 0;
   }
 
+  .hero {
+    padding-bottom: 120px;
+  }
+
   .container {
     padding-left: 20px;
     padding-right: 20px;
@@ -2636,6 +2663,19 @@ body.light .footer p {
     height: 26px;
     top: 60px;
     right: 10px;
+  }
+
+  .theme-switch .slider::before {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 10px;
+    bottom: 2px;
+    left: 3px;
+  }
+
+  .theme-switch input:checked+.slider::before {
+    transform: translateX(20px);
   }
 }
 
