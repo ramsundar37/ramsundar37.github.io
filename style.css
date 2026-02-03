@@ -604,12 +604,42 @@ section {
 
 @media (max-width: 768px) {
   .ladder-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 50px 1fr;
+    /* Fixed width for ladder, rest for cards */
+    gap: 15px;
   }
 
   .ladder-side {
+    display: flex;
+    /* Show ladder */
+    height: 280px;
+    /* Slightly shorter on mobile */
+  }
+
+  /* Adjust ladder rail width/position for mobile if needed */
+  .ladder-rail-container {
+    width: 40px;
+  }
+
+  .scroll-climber {
+    width: 35px;
+    height: 35px;
+  }
+
+  .climber-speech {
     display: none;
-    /* Hide ladder on mobile for cleaner look as in many designs */
+    /* Hide speech bubble on mobile to save space */
+  }
+
+  .edu-card-ref {
+    padding: 16px;
+    /* Reduce padding */
+    gap: 12px;
+  }
+
+  .edu-info h4 {
+    font-size: 1rem;
+    /* Smaller title */
   }
 }
 
