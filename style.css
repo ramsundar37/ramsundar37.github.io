@@ -1599,6 +1599,47 @@ body.light .glass {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* ===============================
+   CUSTOM MODAL CLOSE BUTTON
+   =============================== */
+.modal-close-custom {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1056;
+  /* Higher than Bootstrap modal content */
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close-custom:hover {
+  background: rgba(255, 0, 0, 0.8);
+  transform: rotate(90deg);
+}
+
+body.light .modal-close-custom {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
+body.light .modal-close-custom:hover {
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+
 /* Input Area */
 .chat-input-area {
   padding: 16px;
