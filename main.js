@@ -495,8 +495,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .from(".hero-buttons a, .hero-buttons button", {
       y: 20,
       opacity: 0,
-      stagger: 0.15,
-    }, "-=0.4")
+      stagger: 0.1,
+    }, "-=1.1")
     .from(".social-link", {
       y: 15,
       opacity: 0,
