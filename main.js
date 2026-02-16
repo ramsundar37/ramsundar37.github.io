@@ -484,7 +484,7 @@ document.addEventListener("DOMContentLoaded", () => {
       y: 60,
       opacity: 0,
     }, "-=0.6")
-    .from(".hero-role", {
+    .from(".hero-skill", {
       y: 40,
       opacity: 0,
     }, "-=0.6")
@@ -497,7 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
       opacity: 0,
       stagger: 0.1,
     }, "-=1.1")
-    .from(".social-link", {
+    .from(".social-icon", {
       y: 15,
       opacity: 0,
       stagger: 0.1,
