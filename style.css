@@ -1941,6 +1941,13 @@ body.light #chatInput {
   box-shadow: 0 0 14px rgba(34, 211, 238, 0.35);
 }
 
+/* Specific Social Brand Colors on Hover */
+.social-icon.youtube:hover {
+  color: #ff0000;
+  background: rgba(255, 0, 0, 0.08);
+  box-shadow: 0 0 22px rgba(255, 0, 0, 0.45);
+}
+
 /* Light mode adjustment */
 body.light .social-icon {
   background: rgba(2, 6, 23, 0.04);
@@ -3279,13 +3286,13 @@ body.light .modal-close-btn {
 
 /* Contact Socials Row */
 .contact-socials-row {
-    justify-content: flex-start;
-    padding-left: 2px;
+  justify-content: flex-start;
+  padding-left: 2px;
 }
 
 @media (max-width: 768px) {
-    .contact-socials-row {
-        justify-content: center;
-        margin-top: 2rem !important;
-    }
+  .contact-socials-row {
+    justify-content: center;
+    margin-top: 2rem !important;
+  }
 }
