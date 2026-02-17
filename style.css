@@ -1948,6 +1948,24 @@ body.light #chatInput {
   box-shadow: 0 0 22px rgba(255, 0, 0, 0.45);
 }
 
+.social-icon.facebook:hover {
+  color: #1877F2;
+  background: rgba(24, 119, 242, 0.08);
+  box-shadow: 0 0 22px rgba(24, 119, 242, 0.45);
+}
+
+.social-icon.instagram:hover {
+  color: #E4405F;
+  background: rgba(228, 64, 95, 0.08);
+  box-shadow: 0 0 22px rgba(228, 64, 95, 0.45);
+}
+
+.social-icon.snapchat:hover {
+  color: #FFFC00;
+  background: rgba(255, 252, 0, 0.08);
+  box-shadow: 0 0 22px rgba(255, 252, 0, 0.45);
+}
+
 /* Light mode adjustment */
 body.light .social-icon {
   background: rgba(2, 6, 23, 0.04);
