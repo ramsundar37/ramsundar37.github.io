@@ -137,6 +137,15 @@
 
 <body>
 
+  <!-- In-app Browser Breakout Banner -->
+  <div id="inAppBanner" class="in-app-banner hidden">
+    <div class="banner-content">
+      <i class="fas fa-rocket"></i>
+      <span>For the best experience (and to view PDFs), please open in <strong>Chrome</strong>.</span>
+      <button id="breakoutBtn" class="btn-breakout">Open in Browser</button>
+    </div>
+  </div>
+
   <!-- Theme Toggle  -->
   <label class="switch theme-switch">
     <input type="checkbox" id="themeToggleInput">
@@ -299,7 +308,17 @@
           <i class="fas fa-times"></i>
         </button>
         <div class="modal-body p-0">
-          <embed src="doc/Ramsundar_resume.pdf" type="application/pdf" width="100%" height="100%">
+          <div class="modal-pdf-container">
+            <embed src="doc/Ramsundar_resume.pdf" type="application/pdf" width="100%" height="100%">
+            <div class="pdf-fallback">
+              <i class="fas fa-file-pdf"></i>
+              <p>Unable to display PDF preview here.</p>
+              <div class="fallback-btns">
+                <a href="doc/Ramsundar_resume.pdf" target="_blank" class="btn-hero">Open PDF in New Tab</a>
+                <a href="doc/Ramsundar_resume.pdf" download class="btn-hero">Download PDF</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -581,35 +600,35 @@
         <div class="row justify-content-center skills-row">
           <div class="col-4 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="100">
             <div class="tool-card">
-              <img src="images/excel.png" alt="Excel">
+              <img src="images/excel.png" alt="Excel" loading="lazy">
             </div>
             <span class="tool-name">Excel</span>
           </div>
 
           <div class="col-4 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="100">
             <div class="tool-card">
-              <img src="images/vscode1.png" alt="VS Code">
+              <img src="images/vscode1.png" alt="VS Code" loading="lazy">
             </div>
             <span class="tool-name">VS Code</span>
           </div>
 
           <div class="col-4 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="300">
             <div class="tool-card">
-              <img src="images/canva1.png" alt="Canva">
+              <img src="images/canva1.png" alt="Canva" loading="lazy">
             </div>
             <span class="tool-name">Canva</span>
           </div>
 
           <div class="col-4 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="400">
             <div class="tool-card">
-              <img src="images/powerbi.png" alt="Power BI">
+              <img src="images/powerbi.png" alt="Power BI" loading="lazy">
             </div>
             <span class="tool-name">Power BI</span>
           </div>
 
           <div class="col-4 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="500">
             <div class="tool-card">
-              <img src="images/Tableau.png" alt="Tableau">
+              <img src="images/Tableau.png" alt="Tableau" loading="lazy">
             </div>
             <span class="tool-name">Tableau</span>
           </div>
@@ -619,21 +638,21 @@
         <div class="row justify-content-center skills-row mt-3">
           <div class="col-4 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="200">
             <div class="tool-card">
-              <img src="images/python.gif" alt="Python">
+              <img src="images/python.gif" alt="Python" loading="lazy">
             </div>
             <span class="tool-name">Python</span>
           </div>
 
           <div class="col-4 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="300">
             <div class="tool-card">
-              <img src="images/Sql.png" alt="SQL">
+              <img src="images/Sql.png" alt="SQL" loading="lazy">
             </div>
             <span class="tool-name">SQL & PL/SQL</span>
           </div>
 
           <div class="col-4 col-md-2 text-center tool-item m-3" data-aos="zoom-in" data-aos-delay="200">
             <div class="tool-card">
-              <img src="images/figma1.gif" alt="Figma">
+              <img src="images/figma1.gif" alt="Figma" loading="lazy">
             </div>
             <span class="tool-name">Figma (UI/UX)</span>
           </div>
@@ -705,10 +724,10 @@
             <div class="video-wrapper" style="position: relative;">
               <!-- Image thumbnail shown by default -->
               <img src="images/figma UI.png" alt="TravelMate UI Design" class="card-img-top"
-                style="height: 200px; object-fit: cover;">
+                style="height: 200px; object-fit: cover;" loading="lazy">
 
               <!-- Hidden video demo (revealed on button click) -->
-              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls preload="none">
                 <source src="videos/figma UI.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -750,10 +769,10 @@
             <div class="video-wrapper" style="position: relative;">
 
               <img src="images/traffic sign.png" alt="Traffic Sign Recognition" class="card-img-top"
-                style="height: 200px; object-fit: cover;">
+                style="height: 200px; object-fit: cover;" loading="lazy">
 
 
-              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls preload="none">
                 <source src="videos/traffic sign reco.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -798,7 +817,7 @@
             <div class="video-wrapper" style="position: relative;">
               <img src="images/Blinkit.png" alt="power BI" class="card-img-top"
                 style="height: 200px; object-fit: cover;">
-              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls preload="none">
                 <source src="videos/blikitpowerbi.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -836,8 +855,8 @@
           <div class="card">
             <div class="video-wrapper" style="position: relative;">
               <img src="images/iplanalysis_powerbi.png" alt="power BI" class="card-img-top"
-                style="height: 200px; object-fit: cover;">
-              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                style="height: 200px; object-fit: cover;" loading="lazy">
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls preload="none">
                 <source src="videos/iplanalysis_powerbi.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -876,8 +895,8 @@
           <div class="card">
             <div class="video-wrapper" style="position: relative;">
               <img src="images/Blinkit-Tableau.png" alt="power BI" class="card-img-top"
-                style="height: 200px; object-fit: cover;">
-              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                style="height: 200px; object-fit: cover;" loading="lazy">
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls preload="none">
                 <source src="videos/Tableau_Blinkit.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -916,8 +935,8 @@
           <div class="card">
             <div class="video-wrapper" style="position: relative;">
               <img src="images/Tableau_Hranaly.png" alt="HR Analytics" class="card-img-top"
-                style="height: 200px; object-fit: cover;">
-              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls>
+                style="height: 200px; object-fit: cover;" loading="lazy">
+              <video style="display: none; width: 100%; height: 200px; object-fit: cover;" controls preload="none">
                 <source src="videos/Tableau Hranaly.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -1279,7 +1298,17 @@
           <i class="fas fa-times"></i>
         </button>
         <div class="modal-body p-0">
-          <embed src="doc/IELTS MARKSHEET.pdf" type="application/pdf" width="100%" height="100%">
+          <div class="modal-pdf-container">
+            <embed src="doc/IELTS MARKSHEET.pdf" type="application/pdf" width="100%" height="100%">
+            <div class="pdf-fallback">
+              <i class="fas fa-file-pdf"></i>
+              <p>Unable to display PDF preview here.</p>
+              <div class="fallback-btns">
+                <a href="doc/IELTS MARKSHEET.pdf" target="_blank" class="btn-hero">Open PDF in New Tab</a>
+                <a href="doc/IELTS MARKSHEET.pdf" download class="btn-hero">Download PDF</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

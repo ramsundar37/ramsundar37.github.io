@@ -3314,3 +3314,129 @@ body.light .modal-close-btn {
     margin-top: 2rem !important;
   }
 }
+
+/* ===============================
+   IN-APP BROWSER BANNER
+   =============================== */
+.in-app-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(45, 212, 191, 0.3);
+  z-index: 10000;
+  padding: 12px 20px;
+  animation: slideDown 0.5s ease-out;
+}
+
+.in-app-banner.hidden {
+  display: none;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.banner-content i {
+  color: var(--cyan-hero);
+  font-size: 1.2rem;
+}
+
+.btn-breakout {
+  background: var(--gradient-primary);
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: #020617;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn-breakout:hover {
+  transform: scale(1.05);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* ===============================
+   PDF MODAL FALLBACK
+   =============================== */
+.modal-pdf-container {
+  height: 100%;
+  position: relative;
+}
+
+.pdf-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-base);
+  z-index: 1;
+  /* Sits behind if PDF loads, but shows if it's blank */
+  padding: 20px;
+  text-align: center;
+}
+
+.pdf-fallback i {
+  font-size: 4rem;
+  color: #f87171;
+  margin-bottom: 20px;
+}
+
+.pdf-fallback p {
+  color: var(--text-main);
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.fallback-btns {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fallback-btns .btn-hero {
+  min-width: 180px;
+}
+
+/* Ensure embed is on top if it works */
+.modal-pdf-container embed {
+  position: relative;
+  z-index: 2;
+  background: white;
+  /* Some browsers show white before loading */
+}

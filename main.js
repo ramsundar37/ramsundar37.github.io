@@ -687,6 +687,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  /* ===============================
+     IN-APP BROWSER DETECTION & BREAKOUT
+     =============================== */
+  function detectInApp() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isInApp = (ua.indexOf("Instagram") > -1) ||
+      (ua.indexOf("WhatsApp") > -1) ||
+      (ua.indexOf("FBAN") > -1) ||
+      (ua.indexOf("FBAV") > -1);
+
+    if (isInApp) {
+      const banner = document.getElementById("inAppBanner");
+      if (banner) banner.classList.remove("hidden");
+    }
+  }
+
+  const breakoutBtn = document.getElementById("breakoutBtn");
+  if (breakoutBtn) {
+    breakoutBtn.addEventListener("click", () => {
+      const url = window.location.href.replace(/^https?:\/\//, "");
+      const isAndroid = /Android/i.test(navigator.userAgent);
+
+      if (isAndroid) {
+        // Android Intent to open Chrome
+        window.location.href = `intent://${url}#Intent;scheme=https;package=com.android.chrome;end`;
+      } else {
+        // For iOS/Other, we just show a tip or try a new tab (iOS is restricted)
+        alert("Tap the three dots (⋮) or the 'browser' icon and select 'Open in Safari' or 'Open in Browser'.");
+      }
+    });
+  }
+
+  detectInApp();
+
 });
 
 /* ===============================
