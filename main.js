@@ -692,14 +692,16 @@ document.addEventListener("DOMContentLoaded", () => {
      =============================== */
   function detectInApp() {
     const ua = navigator.userAgent || navigator.vendor || window.opera;
-    const isInApp = (ua.indexOf("Instagram") > -1) ||
-      (ua.indexOf("WhatsApp") > -1) ||
-      (ua.indexOf("FBAN") > -1) ||
-      (ua.indexOf("FBAV") > -1);
+    // Broader detection for common in-app browsers
+    const isInApp = /Instagram|WhatsApp|FBAN|FBAV|Snapchat|GSA|Line|wv/i.test(ua);
 
     if (isInApp) {
       const banner = document.getElementById("inAppBanner");
-      if (banner) banner.classList.remove("hidden");
+      if (banner) {
+        banner.classList.remove("hidden");
+        // Also push the body down to avoid overlapping the top of the content
+        document.body.style.paddingTop = banner.offsetHeight + "px";
+      }
     }
   }
 
