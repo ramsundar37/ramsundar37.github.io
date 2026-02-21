@@ -699,10 +699,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const banner = document.getElementById("inAppBanner");
       if (banner) {
         banner.classList.remove("hidden");
-        // Also push the body down to avoid overlapping the top of the content
-        document.body.style.paddingTop = banner.offsetHeight + "px";
       }
     }
+  }
+
+  const closeBanner = document.getElementById("closeBanner");
+  if (closeBanner) {
+    closeBanner.addEventListener("click", () => {
+      const banner = document.getElementById("inAppBanner");
+      if (banner) banner.classList.add("hidden");
+    });
   }
 
   const breakoutBtn = document.getElementById("breakoutBtn");
