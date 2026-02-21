@@ -3466,3 +3466,59 @@ body.light .modal-close-btn {
     min-height: 300px;
   }
 }
+
+/* ===============================
+   CUSTOM MODAL CLOSE BUTTON
+   =============================== */
+.modal-close-custom {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10050;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.modal-close-custom:hover {
+  background: var(--gradient-primary);
+  color: #020617;
+  transform: scale(1.1);
+}
+
+.modal-close-custom i {
+  font-size: 1rem;
+}
+
+/* Also for project modal */
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(15, 23, 42, 0.6);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: var(--gradient-primary);
+  color: #020617;
+}
