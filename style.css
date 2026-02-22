@@ -1905,8 +1905,8 @@ body.light #chatInput {
 
 /* Base icon */
 .social-icon {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
 
   display: flex;
@@ -1917,7 +1917,7 @@ body.light #chatInput {
   border: 1px solid var(--border-soft);
 
   color: var(--text-muted);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   text-decoration: none;
 
   transition:
@@ -1964,6 +1964,12 @@ body.light #chatInput {
   color: #FFFC00;
   background: rgba(255, 252, 0, 0.08);
   box-shadow: 0 0 22px rgba(255, 252, 0, 0.45);
+}
+
+.social-icon.linktree:hover {
+  color: #39E09B;
+  background: rgba(57, 224, 155, 0.08);
+  box-shadow: 0 0 22px rgba(57, 224, 155, 0.45);
 }
 
 /* Light mode adjustment */
@@ -2483,15 +2489,26 @@ body.light .contact-section-rafi {
   color: var(--cyan-hero) !important;
 }
 
+.contact-section-rafi a.fw-medium i.fa-external-link-alt {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact-section-rafi a.fw-medium:hover i.fa-external-link-alt {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
 .contact-icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 12px;
   background: var(--gradient-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #020617;
   box-shadow: 0 0 28px rgba(45, 212, 191, 0.4);
   flex-shrink: 0;
@@ -3308,10 +3325,18 @@ body.light .modal-close-btn {
   padding-left: 2px;
 }
 
+@media (max-width: 991px) {
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-socials-row {
-    justify-content: center;
-    margin-top: 2rem !important;
+    justify-content: flex-start;
+    margin-top: 1.5rem !important;
   }
 }
 
