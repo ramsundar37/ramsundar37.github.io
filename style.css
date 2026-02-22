@@ -3321,6 +3321,8 @@ body.light .modal-close-btn {
 
 /* Contact Socials Row */
 .contact-socials-row {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   padding-left: 2px;
 }
