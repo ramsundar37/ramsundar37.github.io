@@ -3473,8 +3473,9 @@ body.light .modal-close-btn {
   min-width: 180px;
 }
 
-/* Ensure embed is on top if it works */
-.modal-pdf-container embed {
+/* Ensure embed/iframe is on top if it works */
+.modal-pdf-container embed,
+.modal-pdf-container iframe {
   position: relative;
   z-index: 2;
   background: white;
@@ -3482,14 +3483,3 @@ body.light .modal-close-btn {
 }
 
 /* Hide embed on mobile/tablets where it often fails */
-@media (max-width: 991px) {
-  .modal-pdf-container embed {
-    display: none;
-  }
-
-  .pdf-fallback {
-    position: relative;
-    z-index: 3;
-    min-height: 300px;
-  }
-}
